@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Tumyum - Get In Touch</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for fonts and colors */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFF8F0; /* Light background to complement vibrant colors */
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Fredoka One', cursive; /* Bubbly headline font */
+            color: #FF7043; /* Tangy Orange */
+        }
+        .text-primary-orange {
+            color: #FF7043;
+        }
+        .bg-primary-orange {
+            background-color: #FF7043;
+        }
+        .text-accent-pink {
+            color: #F48FB1;
+        }
+        .bg-accent-pink {
+            background-color: #F48FB1;
+        }
+        .text-accent-lime {
+            color: #CDDC39;
+        }
+        .bg-accent-lime {
+            background-color: #CDDC39;
+        }
+        .btn-primary {
+            @apply bg-primary-orange text-white px-6 py-3 rounded-full shadow-lg hover:bg-orange-600 transition duration-300 ease-in-out;
+        }
+        .btn-secondary {
+            @apply bg-accent-pink text-white px-6 py-3 rounded-full shadow-lg hover:bg-pink-400 transition duration-300 ease-in-out;
+        }
+        .btn-tertiary {
+            @apply bg-accent-lime text-gray-800 px-6 py-3 rounded-full shadow-lg hover:bg-lime-400 transition duration-300 ease-in-out;
+        }
+        .section-heading {
+            @apply text-4xl md:text-5xl font-bold text-center mb-12 mt-16;
+        }
+        .content-section {
+            @apply bg-white rounded-xl shadow-lg p-8 mb-8;
+        }
+        .content-section h3 {
+            @apply text-3xl font-bold mb-4 text-primary-orange;
+        }
+        .content-section p, .content-section ul, .content-section ol {
+            @apply text-gray-700 text-base leading-relaxed mb-4;
+        }
+        .content-section ul {
+            @apply list-disc list-inside pl-4;
+        }
+        .content-section ol {
+            @apply list-decimal list-inside pl-4;
+        }
+        /* Form specific styles */
+        .form-label {
+            @apply block text-gray-700 text-lg font-semibold mb-2;
+        }
+        .form-input, .form-textarea {
+            @apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-orange focus:border-transparent transition duration-200;
+        }
+        .form-textarea {
+            @apply resize-y;
+        }
+        /* Custom animations (copied from index.html for consistency) */
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.05); opacity: 0.4; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 6s infinite ease-in-out;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animate-bounce-subtle {
+            animation: bounce-subtle 3s infinite ease-in-out;
+        }
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+            <a href="index.html" class="text-4xl font-bold text-primary-orange flex items-center mb-4 md:mb-0">
+                😋 Tumyum
+            </a>
+            <nav>
+                <ul class="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
+                    <li><a href="index.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Home</a></li>
+                    <li><a href="blog.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Blog</a></li>
+                    <li><a href="privacy.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Privacy</a></li>
+                    <li><a href="terms.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Terms</a></li>
+                    <li><a href="cookies.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Cookies</a></li>
+                    <li><a href="contact.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Contact Hero Section -->
+        <section class="relative bg-gradient-to-br from-accent-pink to-accent-lime text-white py-20 md:py-32 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary-orange rounded-full mix-blend-multiply opacity-30 animate-pulse-slow"></div>
+                <div class="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-accent-pink rounded-full mix-blend-multiply opacity-30 animate-pulse-slow animation-delay-2000"></div>
+            </div>
+            <div class="container mx-auto text-center px-4 relative z-10">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
+                    Connect with Tumyum
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">
+                    We'd love to hear from you! Share your cravings, feedback, or just say hello.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Form and Info Section -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="content-section">
+                    <h3 class="text-center">Send Us a Message</h3>
+                    <p class="text-center text-gray-600 mb-8">
+                        Have a question about a recipe? Want to suggest a new flavor mashup? Or just want to share your latest snack creation? Fill out the form below, and we'll get back to you as soon as our tummies allow!
+                    </p>
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
+                        </div>
+                        <div>
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="What's on your mind?" required>
+                        </div>
+                        <div>
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" name="message" rows="6" class="form-textarea" placeholder="Tell us everything!"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="content-section">
+                    <h3 class="text-center">Reach Out Directly</h3>
+                    <p class="text-center text-gray-600 mb-8">
+                        Prefer to connect through traditional channels? Here's how you can find us. We're always eager to hear from our community of snack enthusiasts, bold cooks, and food adventurers!
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <span class="text-primary-orange text-3xl mt-1">📍</span>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary-orange mb-1">Our Headquarters</h4>
+                                <p class="text-gray-700">
+                                    <strong>Tumyum HQ</strong><br>
+                                    123 Flavor Fusion Lane<br>
+                                    Snackville, CA 90210<br>
+                                    United States
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <span class="text-primary-orange text-3xl mt-1">📧</span>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary-orange mb-1">Email Us</h4>
+                                <p class="text-gray-700">
+                                    General Inquiries: <a href="mailto:hello@tumyum.com" class="text-accent-lime hover:underline">hello@tumyum.com</a><br>
+                                    Support: <a href="mailto:support@tumyum.com" class="text-accent-lime hover:underline">support@tumyum.com</a><br>
+                                    Partnerships: <a href="mailto:partnerships@tumyum.com" class="text-accent-lime hover:underline">partnerships@tumyum.com</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <span class="text-primary-orange text-3xl mt-1">📞</span>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary-orange mb-1">Call Us</h4>
+                                <p class="text-gray-700">
+                                    Phone: +1 (555) 123-4567<br>
+                                    (Available Monday - Friday, 9 AM - 5 PM PST)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <span class="text-primary-orange text-3xl mt-1">📱</span>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary-orange mb-1">Connect on Social</h4>
+                                <p class="text-gray-700">
+                                    Follow us for daily snack inspiration, behind-the-scenes fun, and community challenges!
+                                </p>
+                                <div class="flex space-x-4 mt-2">
+                                    <a href="#" class="text-gray-700 hover:text-accent-pink transition duration-200">
+                                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.505 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C17.34 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="text-gray-700 hover:text-accent-pink transition duration-200">
+                                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.797.048.843.04 1.15.138 1.53.273.354.124.67.3.996.52.624.42 1.164.957 1.787 1.58.623.623 1.164 1.165 1.58 1.787.223.325.4.64.521.996.135.38.233.687.273 1.53.047 1.013.048 1.367.048 3.797s-.001 2.783-.048 3.796c-.04.843-.138 1.15-.273 1.53-.124.354-.3.67-.52 1.002-.624.624-1.164 1.165-1.787 1.788-.623.623-1.165 1.164-1.787 1.58-.325.223-.64.4-1.002.521-.38.135-.687.233-1.53.273-1.013.047-1.367.048-3.797.048s-2.783-.001-3.796-.048c-.843-.04-1.15-.138-1.53-.273-.354-.124-.67-.3-.996-.52-.624-.42-1.164-.957-1.787-1.58-.623-.623-1.165-1.164-1.787-1.58-.223-.325-.4-.64-.521-.996-.135-.38-.233-.687-.273-1.53-.047-1.013-.048-1.367-.048-3.797s.001-2.783.048-3.796c.04-.843.138-1.15.273-1.53.124-.354.3-.67.52-1.002.624-.624 1.164-1.165 1.787-1.788.623-.623 1.165-1.164 1.787-1.58.325-.223.64-.4 1.002-.521.38-.135.687-.233 1.53-.273C9.517 2.001 9.871 2 12.315 2zm0 2.166c-2.42 0-2.75.002-3.71.047-.78.036-1.053.12-.34.238-.27.097-.52.22-.76.38-.56.36-.97.77-1.33 1.13-.36.36-.77.77-1.13 1.33-.16.24-.28.49-.38.76-.118.78-.202 1.053-.238 3.71-.045.96-.047 1.29-.047 3.71s.002 2.75.047 3.71c.036.78.12 1.053.238 1.34.097.27.22.52.38.76.36.56.77.97 1.13 1.33.36.36.77.77 1.33 1.13.24.16.49.28.76.38.287.118.56.202 1.34.238.96.045 1.29.047 3.71.047s2.75-.002 3.71-.047c.78-.036 1.053-.12 1.34-.238.27-.097.52-.22.76-.38.56-.36.97-.77 1.33-1.13.36-.36.77-.77 1.13-1.33-.16-.24-.28-.49-.38-.76-.118-.287.202-.56.238-1.34.045-.96.047-1.29.047-3.71s-.002-2.75-.047-3.71c-.036-.78-.12-1.053-.238-1.34-.097-.27-.22-.52-.38-.76-.36-.56-.77-.97-1.13-1.33-.36-.36-.77-.77-1.33-1.13-.24-.16-.49-.28-.76-.38-.287-.118-.56-.202-1.34-.238-.96-.045-1.29-.047-3.71-.047zM12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.535a3.4 3.4 0 110-6.8 3.4 3.4 0 010 6.8z" />
+                        </svg>
+                                    </a>
+                                    <a href="#" class="text-gray-700 hover:text-accent-pink transition duration-200">
+                                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M8.29 20.251c-1.09 0-1.87-.53-2.34-1.48-.32-.65-.32-1.48 0-2.13.47-.95 1.25-1.48 2.34-1.48 1.09 0 1.87.53 2.34 1.48.32.65.32-1.48 0-2.13-.47-.95-1.25-1.48-2.34-1.48zm-3.25-7.25c.87 0 1.58-.71 1.58-1.58 0-.87-.71-1.58-1.58-1.58-.87 0-1.58.71-1.58 1.58 0 .87.71 1.58 1.58 1.58zm6.5 0c.87 0 1.58-.71 1.58-1.58 0-.87-.71-1.58-1.58-1.58-.87 0-1.58.71-1.58 1.58 0 .87.71 1.58 1.58 1.58zm6.5 0c.87 0 1.58-.71 1.58-1.58 0-.87-.71-1.58-1.58-1.58-.87 0-1.58.71-1.58 1.58 0 .87.71 1.58 1.58 1.58z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (consistent with other pages) -->
+    <footer class="bg-gray-800 text-gray-300 py-12 px-4">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Disclaimer Section -->
+            <div>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">Disclaimer</h3>
+                <p class="text-sm leading-relaxed">
+                    The information on Tumyum.com is for general informational and entertainment purposes only. We strive for accuracy but make no warranties regarding completeness or suitability. Reliance on this information is at your own risk.
+                    <br><br>
+                    Tumyum is not responsible for adverse reactions or health issues from recipes. Users must be aware of their own dietary restrictions and allergies, and consult a healthcare professional before making significant dietary changes. Our recipes may contain common allergens; we do not guarantee cross-contamination freedom. Exercise caution.
+                    <br><br>
+                    Cooking times and serving sizes are estimates. Users should use judgment to ensure food is cooked thoroughly and safely. Tumyum is not liable for foodborne illnesses. Use kitchen equipment with caution; children should be supervised.
+                    <br><br>
+                    Fusion recipes are creative interpretations, not traditional standards, designed for fun and experimentation.
+                    <br><br>
+                    Tumyum may link to external websites; we do not guarantee their accuracy or endorse their content.
+                    <br><br>
+                    By using Tumyum.com, you consent to this disclaimer, which may change without notice. Your continued use signifies acceptance of updates.
+                </p>
+            </div>
+
+            <!-- Customer Satisfaction & About Us -->
+            <div>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">Customer Satisfaction</h3>
+                <p class="text-sm leading-relaxed mb-6">
+                    At Tumyum, your happiness is our top priority! We provide delightful and engaging content that is inspiring, fun, and easy to follow. Your feedback is invaluable for continuous improvement.
+                    <br><br>
+                    For questions, suggestions, or issues, contact our support team. We're committed to prompt assistance and fostering a vibrant community where everyone feels empowered to "Bite Happy. Crave Often." Your satisfaction fuels our passion for playful food culture!
+                </p>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">About Tumyum</h3>
+                <p class="text-sm leading-relaxed">
+                    Tumyum is a fun-first food platform blending street food, snacky bites, fusion recipes, and playful food culture. We cater to teenagers, Gen Z snackers, bold fusion-style home cooks, social media food creators, and anyone seeking fun, small-portion recipes and exciting flavor mashups. Our mission is to make cooking and eating an adventure, full of joy, creativity, and delicious surprises.
+                </p>
+            </div>
+
+            <!-- Address and Copyright -->
+            <div>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">Get In Touch</h3>
+                <p class="text-sm mb-2">
+                    <strong>Tumyum HQ</strong><br>
+                    123 Flavor Fusion Lane<br>
+                    Snackville, CA 90210<br>
+                    United States
+                </p>
+                <p class="text-sm mb-2">
+                    Email: <a href="mailto:hello@tumyum.com" class="text-accent-lime hover:underline">hello@tumyum.com</a>
+                </p>
+                <p class="text-sm mb-6">
+                    Phone: +1 (555) 123-4567
+                </p>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-accent-pink transition duration-200">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.505 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C17.34 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-accent-pink transition duration-200">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.797.048.843.04 1.15.138 1.53.273.354.124.67.3.996.52.624.42 1.164.957 1.787 1.58.623.623 1.164 1.165 1.58 1.787.223.325.4.64.521.996.135.38.233.687.273 1.53.047 1.013.048 1.367.048 3.797s-.001 2.783-.048 3.796c-.04.843-.138 1.15-.273 1.53-.124.354-.3.67-.52 1.002-.624.624-1.164 1.165-1.787 1.788-.623.623-1.165 1.164-1.787 1.58-.325.223-.64.4-1.002.521-.38.135-.687.233-1.53.273-1.013.047-1.367.048-3.797.048s-2.783-.001-3.796-.048c-.843-.04-1.15-.138-1.53-.273-.354-.124-.67-.3-.996-.52-.624-.42-1.164-.957-1.787-1.58-.623-.623-1.165-1.164-1.787-1.58-.223-.325-.4-.64-.521-.996-.135-.38-.233-.687-.273-1.53-.047-1.013-.048-1.367-.048-3.797s.001-2.783.048-3.796c.04-.843.138-1.15.273-1.53.124-.354.3-.67.52-1.002.624-.624 1.164-1.165 1.787-1.788.623-.623 1.165-1.164 1.787-1.58.325-.223.64-.4 1.002-.521.38-.135.687-.233 1.53-.273C9.517 2.001 9.871 2 12.315 2zm0 2.166c-2.42 0-2.75.002-3.71.047-.78.036-1.053.12-.34.238-.27.097-.52.22-.76.38-.56.36-.97.77-1.33 1.13-.36.36-.77.77-1.13 1.33-.16.24-.28.49-.38.76-.118.78-.202 1.053-.238 3.71-.045.96-.047 1.29-.047 3.71s.002 2.75.047 3.71c.036.78.12 1.053.238 1.34.097.27.22.52.38.76.36.56.77.97 1.13 1.33.36.36.77.77 1.33 1.13.24.16.49.28.76.38.287.118.56.202 1.34.238.96.045 1.29.047 3.71.047s2.75-.002 3.71-.047c.78-.036 1.053-.12 1.34-.238.27-.097.52-.22.76-.38.56-.36.97-.77 1.33-1.13.36-.36.77-.77 1.13-1.33-.16-.24-.28-.49-.38-.76-.118-.287.202-.56.238-1.34.045-.96.047-1.29.047-3.71s-.002-2.75-.047-3.71c-.036-.78-.12-1.053-.238-1.34-.097-.27-.22-.52-.38-.76-.36-.56-.77-.97-1.13-1.33-.36-.36-.77-.77-1.33-1.13-.24-.16-.49-.28-.76-.38-.287-.118-.56-.202-1.34-.238-.96-.045-1.29-.047-3.71-.047zM12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.535a3.4 3.4 0 110-6.8 3.4 3.4 0 010 6.8z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-accent-pink transition duration-200">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8.29 20.251c-1.09 0-1.87-.53-2.34-1.48-.32-.65-.32-1.48 0-2.13.47-.95 1.25-1.48 2.34-1.48 1.09 0 1.87.53 2.34 1.48.32.65.32-1.48 0-2.13-.47-.95-1.25-1.48-2.34-1.48zm-3.25-7.25c.87 0 1.58-.71 1.58-1.58 0-.87-.71-1.58-1.58-1.58-.87 0-1.58.71-1.58 1.58 0 .87.71 1.58 1.58 1.58zm6.5 0c.87 0 1.58-.71 1.58-1.58 0-.87-.71-1.58-1.58-1.58-.87 0-1.58.71-1.58 1.58 0 .87.71 1.58 1.58 1.58zm6.5 0c.87 0 1.58-.71 1.58-1.58 0-.87-.71-1.58-1.58-1.58-.87 0-1.58.71-1.58 1.58 0 .87.71 1.58 1.58 1.58z" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-sm mt-6">&copy; 2025 Tumyum. All rights reserved. Bite Happy. Crave Often.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

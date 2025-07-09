@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumyum Cookies Policy - Bite Happy. Crave Often.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for fonts and colors */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFF8F0; /* Light background to complement vibrant colors */
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Fredoka One', cursive; /* Bubbly headline font */
+            color: #FF7043; /* Tangy Orange */
+        }
+        .text-primary-orange {
+            color: #FF7043;
+        }
+        .bg-primary-orange {
+            background-color: #FF7043;
+        }
+        .text-accent-pink {
+            color: #F48FB1;
+        }
+        .bg-accent-pink {
+            background-color: #F48FB1;
+        }
+        .text-accent-lime {
+            color: #CDDC39;
+        }
+        .bg-accent-lime {
+            background-color: #CDDC39;
+        }
+        .btn-primary {
+            @apply bg-primary-orange text-white px-6 py-3 rounded-full shadow-lg hover:bg-orange-600 transition duration-300 ease-in-out;
+        }
+        .btn-secondary {
+            @apply bg-accent-pink text-white px-6 py-3 rounded-full shadow-lg hover:bg-pink-400 transition duration-300 ease-in-out;
+        }
+        .btn-tertiary {
+            @apply bg-accent-lime text-gray-800 px-6 py-3 rounded-full shadow-lg hover:bg-lime-400 transition duration-300 ease-in-out;
+        }
+        .section-heading {
+            @apply text-4xl md:text-5xl font-bold text-center mb-12 mt-16;
+        }
+        .content-section {
+            @apply bg-white rounded-xl shadow-lg p-8 mb-8;
+        }
+        .content-section h3 {
+            @apply text-3xl font-bold mb-4 text-primary-orange;
+        }
+        .content-section h4 {
+            @apply text-2xl font-semibold mb-3 text-accent-pink;
+        }
+        .content-section p, .content-section ul, .content-section ol {
+            @apply text-gray-700 text-base leading-relaxed mb-4;
+        }
+        .content-section ul {
+            @apply list-disc list-inside pl-4;
+        }
+        .content-section ol {
+            @apply list-decimal list-inside pl-4;
+        }
+        /* Cookie Consent Banner */
+        #cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        #cookie-consent-banner .cookie-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-center;
+        }
+        #cookie-consent-banner .cookie-buttons .btn-accept {
+            @apply bg-accent-lime text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-lime-400 transition duration-300;
+        }
+        #cookie-consent-banner .cookie-buttons .btn-decline {
+            @apply bg-gray-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-700 transition duration-300;
+        }
+
+        /* Custom animations (copied from index.html for consistency) */
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.05); opacity: 0.4; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 6s infinite ease-in-out;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animate-bounce-subtle {
+            animation: bounce-subtle 3s infinite ease-in-out;
+        }
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+            <a href="index.html" class="text-4xl font-bold text-primary-orange flex items-center mb-4 md:mb-0">
+                😋 Tumyum
+            </a>
+            <nav>
+                <ul class="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
+                    <li><a href="index.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Home</a></li>
+                    <li><a href="blog.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Blog</a></li>
+                    <li><a href="privacy.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Privacy</a></li>
+                    <li><a href="terms.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Terms</a></li>
+                    <li><a href="cookies.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Cookies</a></li>
+                    <li><a href="contact.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Cookies Policy Hero Section -->
+        <section class="relative bg-gradient-to-br from-accent-lime to-accent-pink text-white py-20 md:py-32 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary-orange rounded-full mix-blend-multiply opacity-30 animate-pulse-slow"></div>
+                <div class="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-accent-lime rounded-full mix-blend-multiply opacity-30 animate-pulse-slow animation-delay-2000"></div>
+            </div>
+            <div class="container mx-auto text-center px-4 relative z-10">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
+                    Tumyum Cookies Policy
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">
+                    Understanding Our Digital Crumbs for a Better Bite.
+                </p>
+            </div>
+        </section>
+
+        <!-- Cookies Policy Content Section -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="content-section">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary-orange mb-8 text-center">Our Commitment to Transparency on Cookies</h2>
+                <p>
+                    At Tumyum, we believe in transparency, especially when it comes to how we use digital technologies like cookies to enhance your experience. This comprehensive Cookies Policy explains what cookies are, how we use them on Tumyum.com, the different types of cookies you might encounter, and most importantly, your choices and rights regarding their use. We want you to feel empowered and informed as you navigate our Flavor Playground. Our goal is to make our use of cookies as clear and understandable as possible, ensuring that you can make informed decisions about your privacy. This policy complements our main <a href="privacy.html" class="text-accent-lime hover:underline">Privacy Policy</a>, providing specific details on cookie-related practices.
+                </p>
+                <p>
+                    Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently, as well as to provide reporting information and to remember your preferences. Without cookies, websites would have no memory, and you would have to log in or set your preferences every time you visit a new page. They are fundamental to modern web browsing.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h3>Detailed Cookie Information: 40 Key Points</h3>
+
+                <h4>1. What Exactly is a Cookie?</h4>
+                <p>
+                    A cookie is a tiny data file, often containing a unique identifier, that is sent from a website's server and stored on your web browser or device. When you revisit that website, the cookie allows the site to recognize your browser and remember information about your previous visit. This recognition is crucial for personalized experiences, such as keeping you logged in, remembering items in a shopping cart, or recalling your preferred language settings. Cookies are not programs and cannot carry viruses or install malware on your computer. They are simply passive data files that facilitate communication between your browser and the website. Their primary function is to enhance user convenience and enable website functionality, making your browsing experience smoother and more efficient.
+                </p>
+                <p>
+                    Think of a cookie as a small note that a website leaves on your computer. The next time you visit that website, your computer presents the note back to the website, allowing it to remember you. This simple mechanism underpins much of the personalized and interactive web experience we now take for granted. Without cookies, many common web features would be impossible or incredibly cumbersome to use.
+                </p>
+
+                <h4>2. How Tumyum Uses Cookies</h4>
+                <p>
+                    At Tumyum, we use cookies to enhance your "Bite Happy. Crave Often." experience. Our cookies help us understand how you interact with our recipes, blog posts, and interactive features. For instance, they remember your login status, so you don't have to re-enter your credentials every time you switch pages. They also help us personalize content by recommending recipes based on your viewing history or quiz results. This allows us to tailor the "Flavor Playground" to your unique tastes and preferences, ensuring you discover more of what you love. We also use them for analytics to see which parts of our site are most popular.
+                </p>
+                <p>
+                    Beyond personalization, cookies are vital for the fundamental operation of our website. They enable features like saving your favorite recipes, tracking your progress in mini-games, and ensuring the smooth functionality of our "Tumyum Generator." By understanding how users navigate and engage with our content, we can continuously optimize and improve the Tumyum experience for everyone. Our aim is to use cookies responsibly to provide a seamless and enjoyable user journey, making your time on our site as delicious as our recipes.
+                </p>
+
+                <h4>3. First-Party Cookies Explained</h4>
+                <p>
+                    First-party cookies are cookies set directly by the website you are visiting – in our case, Tumyum.com. These cookies are essential for the core functionality of our site. For example, when you log into your Tumyum account, a first-party cookie remembers your session, keeping you logged in as you browse different recipes or blog posts. They also store your site preferences, such as language settings or theme choices, ensuring a consistent experience across your visits. These cookies are generally considered less privacy-invasive because they are controlled by the website you are directly interacting with and are typically used to enhance your immediate user experience on that specific site.
+                </p>
+                <p>
+                    These cookies are crucial for maintaining the state of your interaction with Tumyum. Without them, every click on a new page would be treated as a brand new visit, requiring you to re-authenticate or re-select preferences repeatedly. They are fundamental to providing a fluid and user-friendly experience, remembering your choices and ensuring the site functions as expected. They are also used to track basic analytics on our own site, helping us understand overall user engagement without sharing identifiable data with external parties.
+                </p>
+
+                <h4>4. Third-Party Cookies Explained</h4>
+                <p>
+                    Third-party cookies are cookies set by a domain other than the one you are visiting. On Tumyum, these might be used by embedded content (like YouTube videos in our recipe reels), advertising partners, or analytics services (like Google Analytics). For example, if we embed a video from YouTube, YouTube might set a cookie to track your viewing habits. These cookies are often used for cross-site tracking, advertising, and detailed analytics across multiple websites. Their use can raise more privacy concerns as they allow third parties to build a profile of your browsing habits across different sites.
+                </p>
+                <p>
+                    While we strive to limit the use of third-party cookies to essential services and trusted partners, their presence is common across the internet. We carefully select our third-party integrations to ensure they align with our privacy values. These cookies are often crucial for features like social media sharing buttons, personalized advertisements (if you have consented to them), and comprehensive site performance analysis that helps us improve our services. We encourage you to review the privacy policies of these third parties as well.
+                </p>
+
+                <h4>5. Session Cookies: Temporary Digital Memory</h4>
+                <p>
+                    Session cookies are temporary cookies that remain on your device only for the duration of your browsing session. They are automatically deleted from your device when you close your web browser. Their primary purpose is to allow websites to link your actions during a single browsing session, enabling features like keeping items in your shopping cart as you navigate an e-commerce site, or maintaining your login status on Tumyum as you move between different recipe categories. They are crucial for maintaining continuity and functionality during your active visit to a website.
+                </p>
+                <p>
+                    For example, on Tumyum, a session cookie ensures that once you log in, you stay logged in until you close your browser, preventing the need for repeated authentication. This makes your experience smoother and more efficient. Because they are temporary and deleted upon closing the browser, session cookies generally pose fewer privacy risks compared to persistent cookies, as they do not store long-term information about your browsing habits. They are the internet's short-term memory.
+                </p>
+
+                <h4>6. Persistent Cookies: Long-Term Digital Reminders</h4>
+                <p>
+                    Persistent cookies, also known as "tracking cookies," remain on your device for a longer period, even after you close your browser. They have an expiration date (which can be days, months, or even years) or remain until you manually delete them. These cookies are used to remember your preferences or actions across multiple visits to a website. On Tumyum, a persistent cookie might remember your preferred language, your dietary preferences for personalized recipe recommendations, or keep you logged in for an extended period, so you don't have to log in every time you visit.
+                </p>
+                <p>
+                    They are also commonly used for analytics, allowing us to understand long-term user behavior patterns, such as how often you return to the site or which sections you visit most frequently over time. This data helps us continuously improve our content and features. While persistent cookies offer convenience and enable deeper personalization, they also require more careful consideration regarding privacy, as they store information about your long-term interactions with the site. We use them responsibly to enhance your recurring Tumyum experience.
+                </p>
+
+                <h4>7. Essential Cookies: The Foundation of Functionality</h4>
+                <p>
+                    Essential cookies are strictly necessary for the basic operation of a website. Without these cookies, the website simply wouldn't function correctly, or you wouldn't be able to use its core features. They enable fundamental services like user authentication (keeping you logged in), security features (preventing fraudulent activity), and remembering your cookie consent preferences. On Tumyum, essential cookies ensure that you can navigate the site, access your account, and interact with basic elements without interruption. These cookies do not collect any personally identifiable information for marketing or tracking purposes.
+                </p>
+                <p>
+                    Because of their critical role, essential cookies are typically exempt from explicit consent requirements in many privacy regulations, as they are fundamental to delivering the service you have requested. They are the invisible backbone of our website, ensuring that our "Flavor Playground" is always accessible and functional for you. Disabling these cookies would severely impair your ability to use Tumyum.com effectively, as core functionalities would cease to work.
+                </p>
+
+                <h4>8. Performance/Analytics Cookies: Understanding User Behavior</h4>
+                <p>
+                    Performance and analytics cookies collect anonymous information about how visitors use a website, such as which pages are most popular, how long users spend on each page, and if they encounter any error messages. This data helps us understand user behavior patterns, identify areas for improvement, and optimize the overall performance and usability of Tumyum.com. For example, if we notice a particular recipe page has a high bounce rate, we might investigate its content or layout for potential issues. The information collected by these cookies is aggregated and does not directly identify individual users.
+                </p>
+                <p>
+                    We use these insights to make data-driven decisions about content creation, site design, and feature development. By understanding what works well and what needs improvement, we can continuously refine the Tumyum experience, ensuring our "Snack Hacks" and "Tumyum Originals" are always engaging and easy to find. These cookies are vital for our continuous improvement efforts, allowing us to deliver a better and more efficient service to all our users.
+                </p>
+
+                <h4>9. Functionality Cookies: Remembering Your Preferences</h4>
+                <p>
+                    Functionality cookies allow a website to remember choices you make (such as your username, language, or region) and provide enhanced, more personalized features. They can also be used to remember changes you have made to text size, fonts, and other customizable parts of web pages. On Tumyum, these cookies might remember your dietary preferences (e.g., vegetarian, vegan) to filter recipe recommendations, or recall your last visited section to streamline your navigation. They are designed to improve your user experience by making the site more convenient and tailored to your individual needs.
+                </p>
+                <p>
+                    These cookies enhance your interaction with the "Flavor Playground" by recalling your specific settings, preventing you from having to re-enter them on subsequent visits. While not strictly essential for the website's basic operation, they significantly contribute to a smoother and more enjoyable browsing experience. By remembering your preferences, functionality cookies help us deliver a more customized and efficient service, ensuring that Tumyum feels uniquely yours.
+                </p>
+
+                <h4>10. Advertising/Targeting Cookies: Relevant Content Delivery</h4>
+                <p>
+                    Advertising or targeting cookies are used to deliver advertisements that are more relevant to you and your interests. They are often placed by third-party advertising networks with our permission. These cookies track your browsing habits across different websites to build a profile of your interests, which is then used to show you targeted ads. They also help to limit the number of times you see a particular advertisement and measure the effectiveness of advertising campaigns. On Tumyum, if we use such cookies, they would help us show you relevant food-related products or services.
+                </p>
+                <p>
+                    These cookies are crucial for supporting our free content and services by enabling us to generate revenue through advertising. While they facilitate personalized ad experiences, we are committed to using them responsibly and in compliance with all applicable privacy regulations. You have control over these cookies, and we provide mechanisms for you to manage your preferences, as detailed in other sections of this policy. Our aim is to ensure that any advertising you encounter on Tumyum is as relevant and unobtrusive as possible, contributing to, rather than detracting from, your overall experience.
+                </p>
+
+                <h4>11. Cookie Consent Mechanism: Your Informed Choice</h4>
+                <p>
+                    At Tumyum, we employ a clear cookie consent mechanism to ensure that you have control over your privacy. When you first visit our Site, you will see a prominent banner or pop-up requesting your consent to use non-essential cookies. This mechanism allows you to either accept all cookies, decline all non-essential cookies, or customize your preferences by selecting specific categories of cookies you wish to allow. We believe in providing you with an informed choice, rather than assuming your consent. Your decision is respected and stored, so you won't be prompted repeatedly during the same browsing session or on subsequent visits, depending on the cookie's lifespan.
+                </p>
+                <p>
+                    This consent mechanism is designed to comply with global privacy regulations, such as the GDPR and CCPA, which mandate explicit user consent for certain types of data collection. We strive to make the process as user-friendly as possible, ensuring that the options are clear and easy to understand. By giving you granular control, we empower you to tailor your Tumyum experience according to your personal privacy comfort level, reinforcing our commitment to transparency and user autonomy in our "Flavor Playground."
+                </p>
+
+                <h4>12. How to Manage Your Cookie Preferences</h4>
+                <p>
+                    You have several ways to manage your cookie preferences and control the data collected through them. Most web browsers allow you to control cookies through their settings. You can typically configure your browser to accept all cookies, reject all cookies, or notify you when a cookie is being sent. Additionally, you can delete existing cookies from your browser history at any time. Keep in mind that disabling certain types of cookies, particularly essential or functionality cookies, may impact the functionality and overall experience of Tumyum.com.
+                </p>
+                <p>
+                    Beyond browser settings, our cookie consent banner provides a direct way to manage preferences for our site. You can revisit your choices at any time through a link typically found in our footer or privacy policy. For third-party cookies, you may also be able to opt-out directly through the third party's website or through industry-wide opt-out programs. We encourage you to explore these options to tailor your online privacy settings to your comfort level.
+                </p>
+
+                <h4>13. Impact of Declining Cookies</h4>
+                <p>
+                    If you choose to decline non-essential cookies, your experience on Tumyum.com may be less personalized. For instance, you might not receive tailored recipe recommendations, or you may see less relevant advertisements. Some interactive features that rely on tracking your preferences over time might also be limited. While core website functionality will generally remain intact (e.g., browsing recipes, reading blog posts), certain conveniences and enhancements that cookies provide will be disabled. Declining essential cookies, however, would severely impair your ability to use the site, as core login and security features would not function.
+                </p>
+                <p>
+                    We respect your decision to decline cookies, and our site is designed to remain accessible even with limited cookie usage. However, it's important to understand that the full, optimized "Flavor Playground" experience is best achieved when cookies are enabled, as they allow us to remember your preferences and deliver content most relevant to you. We aim to strike a balance between user privacy and a rich, engaging user experience, giving you the choice to decide what works best for you.
+                </p>
+
+                <h4>14. Cookie Lifespan: Session vs. Persistent</h4>
+                <p>
+                    Cookies have varying lifespans, which dictate how long they remain on your device. Session cookies are temporary and are automatically deleted when you close your web browser. They are used for short-term interactions, such as maintaining your login status during a single visit. Persistent cookies, on the other hand, remain on your device for a pre-defined period, which can range from a few minutes to several years, or until you manually delete them. These are used for long-term preferences, analytics, and remembering your choices across multiple visits.
+                </p>
+                <p>
+                    At Tumyum, we use both types to optimize your experience. Session cookies ensure smooth navigation during your current visit, while persistent cookies help us remember your preferences for future visits, providing a more consistent and personalized "Bite Happy. Crave Often." journey. The lifespan of each cookie is carefully considered based on its purpose, ensuring that data is retained only for as long as necessary to achieve its intended function.
+                </p>
+
+                <h4>15. Web Beacons and Pixels: Invisible Trackers</h4>
+                <p>
+                    In addition to cookies, Tumyum may use other tracking technologies like web beacons (also known as pixel tags or clear GIFs). These are tiny graphics with a unique identifier, similar in function to cookies, and are used to track the online movements of web users. Unlike cookies, which are stored on a user's computer hard drive, web beacons are embedded invisibly on web pages or in emails. They are used to count users who have visited certain pages, to deliver or communicate with cookies, to understand usage patterns, and to determine whether an email has been opened and acted upon.
+                </p>
+                <p>
+                    On Tumyum, web beacons might be used in our newsletters to gauge engagement or on certain pages to track aggregated user behavior for analytics purposes. They help us understand the effectiveness of our content and communication strategies without directly identifying you. These technologies work in conjunction with cookies, and your cookie preferences often extend to controlling their functionality as well. We use them to gain insights into how our "Flavor Playground" is being explored, allowing for continuous optimization.
+                </p>
+
+                <h4>16. Local Storage and Session Storage: Browser-Based Data</h4>
+                <p>
+                    Beyond traditional cookies, modern web browsers offer other storage mechanisms like Local Storage and Session Storage. These allow websites to store larger amounts of data directly within your browser. Session Storage is temporary and cleared when you close the browser tab, similar to a session cookie. Local Storage is persistent and remains even after you close your browser, similar to a persistent cookie, but with a larger capacity. Tumyum may use these for certain features, such as remembering your progress in a mini-game or caching content to load pages faster.
+                </p>
+                <p>
+                    These storage mechanisms provide more flexibility for developers to create richer, more responsive web experiences. While they are not technically "cookies," they serve similar purposes in terms of remembering user preferences and data. Your browser settings typically offer options to clear this data, similar to how you manage cookies. We use these technologies to enhance your "Quick. Quirky. Tumyum." experience, ensuring that our interactive elements and content load efficiently and remember your progress.
+                </p>
+
+                <h4>17. Cookie Categories: A Functional Breakdown</h4>
+                <p>
+                    To provide clarity, we categorize the cookies used on Tumyum.com based on their function:
+                </p>
+                <ul>
+                    <li><strong>Strictly Necessary Cookies:</strong> Essential for website operation (e.g., security, user login, cookie consent).</li>
+                    <li><strong>Performance Cookies:</strong> Collect anonymous data on site usage for analytics and improvement.</li>
+                    <li><strong>Functionality Cookies:</strong> Remember user preferences and choices for a personalized experience.</li>
+                    <li><strong>Targeting/Advertising Cookies:</strong> Used to deliver relevant ads and track campaign effectiveness.</li>
+                </ul>
+                <p>
+                    This categorization helps you understand the purpose of each cookie type and make informed decisions when managing your consent preferences. We aim to make our cookie usage as transparent as possible, allowing you to control your digital footprint on our "Flavor Playground." Each category serves a distinct purpose in enhancing or enabling the various features and content available on Tumyum.com, from browsing recipes to playing interactive games.
+                </p>
+
+                <h4>18. Data Collected by Cookies: What Information is Stored?</h4>
+                <p>
+                    The data collected by cookies is typically non-personally identifiable at first glance, but can become associated with your account if you are logged in. This data can include:
+                </p>
+                <ul>
+                    <li><strong>Unique Identifiers:</strong> Random strings of characters that recognize your browser or device.</li>
+                    <li><strong>Preferences:</strong> Language settings, theme choices, dietary filters.</li>
+                    <li><strong>Session Information:</strong> Login status, items in a temporary cart.</li>
+                    <li><strong>Usage Statistics:</strong> Pages visited, time spent, clicks, referring URLs.</li>
+                    <li><strong>Approximate Location:</strong> Derived from IP address for regional content.</li>
+                </ul>
+                <p>
+                    Cookies generally do not store sensitive personal information like your name, email address, or payment details directly. Instead, they store identifiers that link back to such information stored securely on our servers, or they store aggregated, anonymized data. This approach minimizes privacy risks while enabling personalized experiences. We are committed to collecting only the data necessary to provide and improve our services, aligning with our "Bite Happy. Crave Often." philosophy.
+                </p>
+
+                <h4>19. Purpose of Cookie Data Collection: Why We Need It</h4>
+                <p>
+                    The data collected through cookies serves several vital purposes for Tumyum:
+                </p>
+                <ul>
+                    <li><strong>User Experience Enhancement:</strong> Remembering your preferences and login status for seamless navigation.</li>
+                    <li><strong>Personalization:</strong> Tailoring content, such as recipe recommendations, based on your interests and past interactions.</li>
+                    <li><strong>Site Performance and Optimization:</strong> Analyzing user behavior to identify areas for improvement and ensure the site runs efficiently.</li>
+                    <li><strong>Security:</strong> Detecting and preventing fraudulent activities, protecting user accounts.</li>
+                    <li><strong>Marketing and Advertising:</strong> Delivering relevant promotional content and measuring campaign effectiveness (with your consent).</li>
+                    <li><strong>Analytics and Research:</strong> Understanding overall trends and user demographics to inform future content and feature development.</li>
+                </ul>
+                <p>
+                    Each piece of data collected by cookies contributes to making Tumyum a more engaging, efficient, and personalized "Flavor Playground" for you. We use this data to continuously refine our offerings, ensuring that you always find something delicious and exciting. Our commitment is to use this data responsibly and transparently, always with your best interests in mind.
+                </p>
+
+                <h4>20. Third-Party Data Sharing via Cookies: Our Partners</h4>
+                <p>
+                    While Tumyum does not sell your Personal Information, certain third-party cookies on our site may enable data sharing with our trusted service providers. These providers include:
+                </p>
+                <ul>
+                    <li><strong>Analytics Providers (e.g., Google Analytics):</strong> To help us understand website traffic and user behavior in an aggregated, anonymized form.</li>
+                    <li><strong>Advertising Partners:</strong> If we display personalized ads, these partners may use cookies to collect data for ad targeting and measurement, subject to your consent.</li>
+                    <li><strong>Social Media Platforms:</strong> When you use social sharing buttons or embedded social content, the respective social media platforms may set cookies and collect data according to their own privacy policies.</li>
+                    <li><strong>Content Delivery Networks (CDNs):</strong> To optimize content delivery and performance, which may involve some data exchange.</li>
+                </ul>
+                <p>
+                    We carefully vet our third-party partners to ensure they adhere to high data protection standards. We also strive to configure these services to minimize data sharing where possible, and we always encourage you to review the privacy policies of these third parties for a complete understanding of their data practices. Our aim is to collaborate with partners who help us enhance your Tumyum experience while respecting your privacy.
+                </p>
+
+                <h4>21. Your Right to Withdraw Consent</h4>
+                <p>
+                    You have the right to withdraw your consent for non-essential cookies at any time. If you initially accepted all cookies but later change your mind, you can adjust your preferences through our cookie consent banner (which can typically be re-accessed via a link in the footer or privacy policy) or through your web browser settings. Withdrawing consent will prevent future data collection by those specific cookies, but it will not affect the lawfulness of any processing that occurred based on your consent before its withdrawal.
+                </p>
+                <p>
+                    We are committed to making this process straightforward and accessible. Your ability to control your consent is a cornerstone of our privacy commitment, ensuring that your "Bite Happy. Crave Often." journey remains entirely in your hands. We understand that preferences can change, and we want to empower you to manage your digital privacy with ease and confidence.
+                </p>
+
+                <h4>22. Cookie Management Tools in Your Browser</h4>
+                <p>
+                    Your web browser is equipped with powerful tools to manage cookies. You can:
+                </p>
+                <ul>
+                    <li><strong>Delete Cookies:</strong> Clear all cookies from your browsing history.</li>
+                    <li><strong>Block Cookies:</strong> Configure your browser to block all cookies, or only third-party cookies.</li>
+                    <li><strong>Receive Alerts:</strong> Set your browser to alert you when a website tries to set a cookie.</li>
+                    <li><strong>Incognito/Private Mode:</strong> Use these modes to browse without saving cookies or site data locally (though websites can still track you during that session).</li>
+                </ul>
+                <p>
+                    These browser-level controls provide a universal way to manage your cookie preferences across all websites you visit, not just Tumyum. We encourage you to familiarize yourself with your browser's settings to tailor your online privacy experience. Understanding these tools empowers you to take control of your digital footprint and ensure a browsing experience that aligns with your privacy preferences.
+                </p>
+
+                <h4>23. Specific Cookies Used by Tumyum (Examples)</h4>
+                <p>
+                    While the exact list of cookies can change as we optimize our service, here are examples of types of cookies you might find on Tumyum.com:
+                </p>
+                <ul>
+                    <li><strong>`tumyum_session_id`:</strong> A strictly necessary session cookie to maintain your login state.</li>
+                    <li><strong>`tumyum_cookie_consent`:</strong> A persistent cookie to remember your cookie consent choices.</li>
+                    <li><strong>`_ga`, `_gid` (Google Analytics):</strong> Performance cookies for anonymous usage statistics.</li>
+                    <li><strong>`tumyum_user_prefs`:</strong> A functionality cookie to remember your dietary preferences or language settings.</li>
+                    <li><strong>`_fbp`, `_fbc` (Facebook Pixel):</strong> Targeting cookies for advertising purposes (if applicable and consented).</li>
+                </ul>
+                <p>
+                    This list is illustrative and not exhaustive. For the most up-to-date and detailed list of cookies, please refer to your browser's developer tools or a dedicated cookie scanner. We continuously review our cookie usage to ensure it aligns with our stated purposes and your privacy expectations. Our commitment is to use cookies transparently to enhance your "Flavor Playground" experience.
+                </p>
+
+                <h4>24. Data Retention: How Long We Keep Cookie Data</h4>
+                <p>
+                    The data collected through cookies is retained only for as long as necessary to fulfill the purposes for which it was collected, or as required by applicable laws. Session cookies are deleted immediately when you close your browser. Persistent cookies have varying expiration dates, as mentioned in point 14. For aggregated analytics data collected via cookies, it may be retained for longer periods to observe long-term trends, but this data is anonymized and cannot identify you personally.
+                </p>
+                <p>
+                    We implement data retention policies to ensure that your information is not kept indefinitely. Once the purpose for which the data was collected has been fulfilled, or the retention period expires, the data is securely deleted or anonymized. This practice aligns with our commitment to data minimization and responsible data management, ensuring your privacy is respected throughout your Tumyum journey.
+                </p>
+
+                <h4>25. Security Measures for Cookie Data</h4>
+                <p>
+                    We employ robust security measures to protect the data collected through cookies from unauthorized access, alteration, disclosure, or destruction. This includes using secure HTTPS protocols for data transmission, encrypting sensitive data where appropriate, and implementing access controls to limit who can access cookie-related data on our servers. While cookies themselves are typically small, non-executable text files, the data they reference or collect is handled with the same high level of security as other Personal Information.
+                </p>
+                <p>
+                    Our commitment to data security extends to every aspect of our service, including the information gathered via cookies. We regularly review and update our security practices to adapt to evolving threats and ensure the continued protection of your data. Your trust in Tumyum is paramount, and we strive to maintain a secure environment for your "Fun to Cook. Yum to Eat." experience.
+                </p>
+
+                <h4>26. Your Right to Access Cookie-Related Data</h4>
+                <p>
+                    You have the right to request access to the Personal Information that we hold about you, which may include data associated with your cookie identifiers. While raw cookie data itself is often technical and not directly human-readable, we can provide you with information about the categories of data collected through cookies and how it is linked to your user profile, if applicable. To exercise this right, please contact us using the details provided in the "Contact Us" section of this policy. We will verify your identity and respond to your request in accordance with applicable data protection laws.
+                </p>
+                <p>
+                    This right allows you to understand what information we have about you and how it's being used, ensuring transparency in our data practices. We are committed to facilitating your data access requests, empowering you with greater control over your information within the Tumyum "Flavor Playground."
+                </p>
+
+                <h4>27. Your Right to Rectify Cookie-Related Data</h4>
+                <p>
+                    If you believe that any Personal Information we hold about you, including data linked to cookies, is inaccurate or incomplete, you have the right to request its rectification. For instance, if a functionality cookie incorrectly remembers a preference, you can update it through your account settings or by contacting us. We will take reasonable steps to correct or complete your data promptly. This ensures that the information we use to personalize your experience is accurate and up-to-date.
+                </p>
+                <p>
+                    Maintaining accurate user data is crucial for delivering a tailored and efficient service. Your ability to rectify inaccuracies ensures that your Tumyum experience remains optimized and reflects your current preferences. We are dedicated to upholding your right to accurate data within our "Bite Happy. Crave Often." environment.
+                </p>
+
+                <h4>28. Your Right to Erasure (Right to Be Forgotten)</h4>
+                <p>
+                    In certain circumstances, you have the right to request the erasure of your Personal Information, including data collected via cookies. This is often referred to as the "right to be forgotten." This right applies, for example, when the data is no longer necessary for the purposes for which it was collected, or when you withdraw your consent and there is no other legal basis for processing. Please note that fulfilling an erasure request may lead to the deletion of your account and associated content, and some data may be retained for legal or legitimate business purposes.
+                </p>
+                <p>
+                    To exercise this right, please contact us. We will assess your request against applicable legal requirements and inform you of the outcome. Our commitment to this right underscores our dedication to your privacy and control over your digital footprint on the Tumyum "Flavor Playground."
+                </p>
+
+                <h4>29. Your Right to Object to Processing</h4>
+                <p>
+                    You have the right to object to the processing of your Personal Information, including data collected through certain types of cookies (e.g., those used for direct marketing or profiling based on legitimate interests). If you object, we will cease processing your data for those purposes unless we can demonstrate compelling legitimate grounds for the processing that override your interests, rights, and freedoms, or for the establishment, exercise, or defense of legal claims. This right provides you with another layer of control over how your data is used.
+                </p>
+                <p>
+                    Exercising this right allows you to challenge specific data processing activities that you deem intrusive or unnecessary. We are committed to reviewing and responding to all such objections seriously, ensuring that our data processing practices align with your privacy expectations and legal requirements.
+                </p>
+
+                <h4>30. Your Right to Data Portability</h4>
+                <p>
+                    In certain situations, you have the right to receive your Personal Information, including data associated with cookies, in a structured, commonly used, and machine-readable format, and to transmit that data to another controller. This right applies to data that you have provided to us, and where the processing is based on consent or contract, and is carried out by automated means. This allows you to easily transfer your data between services.
+                </p>
+                <p>
+                    While cookie data itself is often technical, we can provide you with the personal information linked to your account that has been collected via cookies in a portable format upon request. This empowers you to take your data with you, reinforcing your ownership and control over your digital identity within the Tumyum ecosystem.
+                </p>
+
+                <h4>31. Automated Decision-Making and Profiling</h4>
+                <p>
+                    Tumyum may use cookie data, in conjunction with other usage data, for automated decision-making or profiling to personalize your experience. For example, our recipe recommendation engine might use your viewing history (tracked via cookies) to automatically suggest new recipes you might like. This profiling is designed to enhance your "Flavor Playground" experience by showing you more relevant content and features, not to produce legal or similarly significant effects concerning you.
+                </p>
+                <p>
+                    We do not use automated decision-making that produces legal or similarly significant effects on you without human intervention, unless such processing is necessary for entering into, or performance of, a contract between you and us, or is authorized by law, or is based on your explicit consent. You have the right to request human intervention, express your point of view, and contest decisions made solely on automated processing.
+                </p>
+
+                <h4>32. How to Contact Us About Cookie Preferences</h4>
+                <p>
+                    If you have any questions about this Cookies Policy, wish to exercise any of your data rights related to cookies, or need assistance with managing your cookie preferences beyond the options provided on the site, please do not hesitate to contact us. Our dedicated support team is here to help you navigate your privacy choices.
+                </p>
+                <p>
+                    You can reach us via email at <a href="mailto:privacy@tumyum.com" class="text-accent-lime hover:underline">privacy@tumyum.com</a> or through the contact information provided in the footer of this page. We are committed to responding to all inquiries promptly and transparently, ensuring that your concerns are addressed effectively. Your feedback is invaluable in helping us maintain a trustworthy and user-friendly "Flavor Playground."
+                </p>
+
+                <h4>33. Reporting Cookie-Related Issues</h4>
+                <p>
+                    If you encounter any issues with our cookie consent mechanism, believe that cookies are being used in a way inconsistent with this policy, or have any other cookie-related concerns, please report them to us immediately. Your vigilance helps us maintain the integrity and security of our services. We take all reports seriously and will investigate them thoroughly to ensure compliance with our policies and applicable regulations.
+                </p>
+                <p>
+                    To report an issue, please contact our support team at <a href="mailto:support@tumyum.com" class="text-accent-lime hover:underline">support@tumyum.com</a>. Providing as much detail as possible, including screenshots or specific steps to reproduce the issue, will help us address your concerns more efficiently. We are committed to continuous improvement and rely on our community to help us maintain a safe and transparent environment.
+                </p>
+
+                <h4>34. Cookies and Account Deletion</h4>
+                <p>
+                    When you request to delete your Tumyum account, we will also delete or anonymize all Personal Information associated with your account, including any data linked through persistent cookies, in accordance with our data retention policies and legal obligations. Session cookies will naturally expire. While some aggregated or anonymized data derived from cookies may be retained for analytical purposes (as it no longer identifies you), your personal cookie-related data will be removed.
+                </p>
+                <p>
+                    This process ensures that your decision to leave Tumyum is fully respected, and your digital footprint is minimized. We strive to make the account deletion process clear and comprehensive, providing you with full control over your data. Our commitment to your "right to be forgotten" extends to all data associated with your account, including that collected via cookies.
+                </p>
+
+                <h4>35. Future Changes to Cookie Usage</h4>
+                <p>
+                    As Tumyum evolves and new technologies emerge, our use of cookies may change. We are committed to regularly reviewing and updating this Cookies Policy to reflect any changes in our data practices or relevant regulations. Any significant changes will be communicated to you through a prominent notice on our Site or via email, where appropriate. We encourage you to revisit this page periodically to stay informed about how we use cookies.
+                </p>
+                <p>
+                    Our aim is to continuously enhance your "Flavor Playground" experience while upholding the highest standards of privacy. Transparency about our cookie usage is a core part of this commitment, ensuring you are always aware of how your data is being handled. Your continued use of the Site after any updates signifies your acceptance of the revised policy.
+                </p>
+
+                <h4>36. Cookies and Third-Party Links</h4>
+                <p>
+                    Our Site may contain links to third-party websites, products, or services (e.g., external recipe sites, social media platforms, online stores). When you click on these links, you may be redirected to sites that are not operated by Tumyum. These third-party sites may use their own cookies and tracking technologies, which are governed by their respective privacy and cookie policies. Tumyum has no control over and assumes no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+                </p>
+                <p>
+                    We strongly advise you to review the Privacy Policy and Cookies Policy of every site you visit. While we strive to link only to reputable sources, we cannot be held responsible for the data practices of external websites. Your interaction with these third-party links is at your own discretion and risk, and we encourage you to be mindful of your privacy choices when navigating away from Tumyum.com.
+                </p>
+
+                <h4>37. Geolocation and Cookies</h4>
+                <p>
+                    While cookies themselves don't directly store precise geolocation, your IP address (which can be collected via cookies or other means) can provide an approximate geographical location. This information might be used to tailor content, such as showing you regional recipe variations or local food events, or to comply with regional legal requirements. If you access Tumyum via a mobile device and grant explicit permission, we might collect more precise geolocation data, which would also be subject to this policy.
+                </p>
+                <p>
+                    The use of location data, even approximate, is always aimed at enhancing your personalized experience on the "Flavor Playground." We only collect and use such data when it serves a clear purpose in improving our service to you, and always with your privacy in mind. You typically have controls in your device settings to manage location sharing permissions.
+                </p>
+
+                <h4>38. Cookie Audits and Compliance</h4>
+                <p>
+                    Tumyum regularly conducts internal audits of its cookie usage to ensure compliance with this Cookies Policy, our Privacy Policy, and relevant data protection regulations (such as GDPR, CCPA, etc.). These audits involve reviewing the types of cookies deployed, their purposes, their lifespans, and the data they collect. We are committed to maintaining a transparent and compliant cookie environment, and these audits are a critical part of that commitment.
+                </p>
+                <p>
+                    Our dedication to compliance means we continuously monitor changes in privacy laws and industry best practices, adapting our cookie management strategies accordingly. This proactive approach ensures that your privacy rights are consistently protected as you enjoy the "Bite Happy. Crave Often." experience on Tumyum. Our aim is to build and maintain your trust through diligent and responsible data practices.
+                </p>
+
+                <h4>39. The Role of Cookies in Personalization</h4>
+                <p>
+                    Cookies play a fundamental role in personalizing your Tumyum experience. By remembering your preferences, past interactions (like recipes viewed or quizzes taken), and browsing habits, cookies enable us to tailor the content and features you see. This means more relevant recipe recommendations, a customized "Flavor Playground" dashboard, and an overall more engaging and efficient user journey. Without personalization, your experience would be generic and less engaging, requiring you to manually filter and search for content that aligns with your interests.
+                </p>
+                <p>
+                    Our personalization efforts are designed to make Tumyum feel uniquely yours, helping you discover new "Snack Hacks" and "Tumyum Originals" that truly resonate with your tastes. We believe that thoughtful personalization enhances the value of our service, making your time on our site more enjoyable and productive. We strive to achieve this balance between personalized content and respecting your privacy choices.
+                </p>
+
+                <h4>40. Your Feedback on Our Cookie Policy</h4>
+                <p>
+                    We are always striving to improve our transparency and data practices. Your feedback on this Cookies Policy, or any aspect of our cookie usage, is highly valued. If you have suggestions for how we can make this policy clearer, more comprehensive, or better aligned with your expectations, please let us know. We view our privacy policies as living documents that evolve with user needs and technological advancements.
+                </p>
+                <p>
+                    Please send your feedback to <a href="mailto:feedback@tumyum.com" class="text-accent-lime hover:underline">feedback@tumyum.com</a>. Your input helps us ensure that Tumyum remains a trustworthy, fun, and privacy-conscious "Flavor Playground" for everyone. We are committed to listening to our community and continuously improving our services based on your valuable insights.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="hidden">
+        <p class="text-lg text-center max-w-2xl">
+            We use cookies to enhance your Tumyum experience, personalize content, and analyze site traffic. By clicking "Accept All," you consent to our use of cookies. For more details, please see our <a href="cookies.html" class="text-accent-lime hover:underline font-semibold">Cookies Policy</a>.
+        </p>
+        <div class="cookie-buttons">
+            <button id="accept-cookies" class="btn-accept">Accept All</button>
+            <button id="decline-cookies" class="btn-decline">Decline Non-Essential</button>
+        </div>
+    </div>
+
+    <!-- Footer (consistent with other pages) -->
+    <footer class="bg-gray-800 text-gray-300 py-12 px-4">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Disclaimer Section -->
+            <div>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">Disclaimer</h3>
+                <p class="text-sm leading-relaxed">
+                    The information on Tumyum.com is for general informational and entertainment purposes only. We strive for accuracy but make no warranties regarding completeness or suitability. Reliance on this information is at your own risk.
+                    <br><br>
+                    Tumyum is not responsible for adverse reactions or health issues from recipes. Users must be aware of their own dietary restrictions and allergies, and consult a healthcare professional before making significant dietary changes. Our recipes may contain common allergens; we do not guarantee cross-contamination freedom. Exercise caution.
+                    <br><br>
+                    Cooking times and serving sizes are estimates. Users should use judgment to ensure food is cooked thoroughly and safely. Tumyum is not liable for foodborne illnesses. Use kitchen equipment with caution; children should be supervised.
+                    <br><br>
+                    Fusion recipes are creative interpretations, not traditional standards, designed for fun and experimentation.
+                    <br><br>
+                    Tumyum may link to external websites; we do not guarantee their accuracy or endorse their content.
+                    <br><br>
+                    By using Tumyum.com, you consent to this disclaimer, which may change without notice. Your continued use signifies acceptance of updates.
+                </p>
+            </div>
+
+            <!-- Customer Satisfaction & About Us -->
+            <div>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">Customer Satisfaction</h3>
+                <p class="text-sm leading-relaxed mb-6">
+                    At Tumyum, your happiness is our top priority! We provide delightful and engaging content that is inspiring, fun, and easy to follow. Your feedback is invaluable for continuous improvement.
+                    <br><br>
+                    For questions, suggestions, or issues, contact our support team. We're committed to prompt assistance and fostering a vibrant community where everyone feels empowered to "Bite Happy. Crave Often." Your satisfaction fuels our passion for playful food culture!
+                </p>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">About Tumyum</h3>
+                <p class="text-sm leading-relaxed">
+                    Tumyum is a fun-first food platform blending street food, snacky bites, fusion recipes, and playful food culture. We cater to teenagers, Gen Z snackers, bold fusion-style home cooks, social media food creators, and anyone seeking fun, small-portion recipes and exciting flavor mashups. Our mission is to make cooking and eating an adventure, full of joy, creativity, and delicious surprises.
+                </p>
+            </div>
+
+            <!-- Address and Copyright -->
+            <div>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">Get In Touch</h3>
+                <p class="text-sm mb-2">
+                    <strong>Tumyum HQ</strong><br>
+                    123 Flavor Fusion Lane<br>
+                    Snackville, CA 90210<br>
+                    United States
+                </p>
+                <p class="text-sm mb-2">
+                    Email: <a href="mailto:hello@tumyum.com" class="text-accent-lime hover:underline">hello@tumyum.com</a>
+                </p>
+                <p class="text-sm mb-6">
+                    Phone: +1 (555) 123-4567
+                </p>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-accent-pink transition duration-200">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.505 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C17.34 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-accent-pink transition duration-200">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.797.048.843.04 1.15.138 1.53.273.354.124.67.3.996.52.624.42 1.164.957 1.787 1.58.623.623 1.164 1.165 1.58 1.787.223.325.4.64.521.996.135.38.233.687.273 1.53.047 1.013.048 1.367.048 3.797s-.001 2.783-.048 3.796c-.04.843-.138 1.15-.273 1.53-.124.354-.3.67-.52 1.002-.624.624-1.164 1.165-1.787 1.788-.623.623-1.165 1.164-1.787 1.58-.325.223-.64.4-1.002.521-.38.135-.687.233-1.53.273-1.013.047-1.367.048-3.797.048s-2.783-.001-3.796-.048c-.843-.04-1.15-.138-1.53-.273-.354-.124-.67-.3-.996-.52-.624-.42-1.164-.957-1.787-1.58-.623-.623-1.165-1.164-1.787-1.58-.223-.325-.4-.64-.521-.996-.135-.38-.233-.687-.273-1.53-.047-1.013-.048-1.367-.048-3.797s.001-2.783.048-3.796c.04-.843.138-1.15.273-1.53.124-.354.3-.67.52-1.002.624-.624 1.164-1.165 1.787-1.788.623-.623 1.165-1.164 1.787-1.58.325-.223.64-.4 1.002-.521.38-.135.687-.233 1.53-.273C9.517 2.001 9.871 2 12.315 2zm0 2.166c-2.42 0-2.75.002-3.71.047-.78.036-1.053.12-.34.238-.27.097-.52.22-.76.38-.56.36-.97.77-1.33 1.13-.36.36-.77.77-1.13 1.33-.16.24-.28.49-.38.76-.118.78-.202 1.053-.238 3.71-.045.96-.047 1.29-.047 3.71s.002 2.75.047 3.71c.036.78.12 1.053.238 1.34.097.27.22.52.38.76.36.56.77.97 1.13 1.33.36.36.77.77 1.33 1.13.24.16.49.28.76.38.287.118.56.202 1.34.238.96.045 1.29.047 3.71.047s2.75-.002 3.71-.047c.78-.036 1.053-.12 1.34-.238.27-.097.52-.22.76-.38.56-.36.97-.77 1.33-1.13.36-.36.77-.77 1.13-1.33-.16-.24-.28-.49-.38-.76-.118-.287.202-.56.238-1.34.045-.96.047-1.29.047-3.71s-.002-2.75-.047-3.71c-.036-.78-.12-1.053-.238-1.34-.097-.27-.22-.52-.38-.76-.36-.56-.77-.97-1.13-1.33-.36-.36-.77-.77-1.33-1.13-.24-.16-.49-.28-.76-.38-.287-.118-.56-.202-1.34-.238-.96-.045-1.29-.047-3.71-.047zM12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.535a3.4 3.4 0 110-6.8 3.4 3.4 0 010 6.8z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-accent-pink transition duration-200">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8.29 20.251c-1.09 0-1.87-.53-2.34-1.48-.32-.65-.32-1.48 0-2.13.47-.95 1.25-1.48 2.34-1.48 1.09 0 1.87.53 2.34 1.48.32.65.32-1.48 0-2.13-.47-.95-1.25-1.48-2.34-1.48zm-3.25-7.25c.87 0 1.58-.71 1.58-1.58 0-.87-.71-1.58-1.58-1.58-.87 0-1.58.71-1.58 1.58 0 .87.71 1.58 1.58 1.58zm6.5 0c.87 0 1.58-.71 1.58-1.58 0-.87-.71-1.58-1.58-1.58-.87 0-1.58.71-1.58 1.58 0 .87.71 1.58 1.58 1.58zm6.5 0c.87 0 1.58-.71 1.58-1.58 0-.87-.71-1.58-1.58-1.58-.87 0-1.58.71-1.58 1.58 0 .87.71 1.58 1.58 1.58z" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-sm mt-6">&copy; 2025 Tumyum. All rights reserved. Bite Happy. Crave Often.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieBanner = document.getElementById('cookie-consent-banner');
+            const acceptButton = document.getElementById('accept-cookies');
+            const declineButton = document.getElementById('decline-cookies');
+
+            // Check if cookie preference is already set
+            const cookiePreference = localStorage.getItem('tumyum_cookie_consent');
+
+            if (!cookiePreference) {
+                // If no preference, show the banner
+                cookieBanner.classList.remove('hidden');
+            }
+
+            acceptButton.addEventListener('click', function() {
+                localStorage.setItem('tumyum_cookie_consent', 'accepted');
+                cookieBanner.classList.add('hidden');
+            });
+
+            declineButton.addEventListener('click', function() {
+                localStorage.setItem('tumyum_cookie_consent', 'declined');
+                cookieBanner.classList.add('hidden');
+                // In a real application, you would also disable non-essential cookies here.
+                // For this static HTML, it primarily hides the banner.
+            });
+        });
+    </script>
+</body>
+</html>

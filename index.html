@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumyum - Bite Happy. Crave Often.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for fonts and colors */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFF8F0; /* Light background to complement vibrant colors */
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Fredoka One', cursive; /* Bubbly headline font */
+            color: #FF7043; /* Tangy Orange */
+        }
+        .text-primary-orange {
+            color: #FF7043;
+        }
+        .bg-primary-orange {
+            background-color: #FF7043;
+        }
+        .text-accent-pink {
+            color: #F48FB1;
+        }
+        .bg-accent-pink {
+            background-color: #F48FB1;
+        }
+        .text-accent-lime {
+            color: #CDDC39;
+        }
+        .bg-accent-lime {
+            background-color: #CDDC39;
+        }
+        .btn-primary {
+            @apply bg-primary-orange text-white px-6 py-3 rounded-full shadow-lg hover:bg-orange-600 transition duration-300 ease-in-out;
+        }
+        .btn-secondary {
+            @apply bg-accent-pink text-white px-6 py-3 rounded-full shadow-lg hover:bg-pink-400 transition duration-300 ease-in-out;
+        }
+        .btn-tertiary {
+            @apply bg-accent-lime text-gray-800 px-6 py-3 rounded-full shadow-lg hover:bg-lime-400 transition duration-300 ease-in-out;
+        }
+        .section-heading {
+            @apply text-4xl md:text-5xl font-bold text-center mb-12 mt-16;
+        }
+        .recipe-card {
+            @apply bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl;
+        }
+        .recipe-image-container {
+            @apply h-64 overflow-hidden;
+        }
+        .recipe-image {
+            @apply w-full h-full object-cover;
+        }
+        .recipe-content {
+            @apply p-6;
+        }
+        .recipe-title {
+            @apply text-2xl font-bold mb-3 text-primary-orange;
+        }
+        .recipe-description {
+            @apply text-gray-700 text-base mb-4 leading-relaxed; /* Added leading-relaxed for better readability */
+        }
+        /* Custom animations */
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.05); opacity: 0.4; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 6s infinite ease-in-out;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animate-bounce-subtle {
+            animation: bounce-subtle 3s infinite ease-in-out;
+        }
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+            <a href="index.html" class="text-4xl font-bold text-primary-orange flex items-center mb-4 md:mb-0">
+                😋 Tumyum
+            </a>
+            <nav>
+                <ul class="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
+                    <li><a href="index.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Home</a></li>
+                    <li><a href="blog.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Blog</a></li>
+                    <li><a href="privacy.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Privacy</a></li>
+                    <li><a href="terms.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Terms</a></li>
+                    <li><a href="cookies.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Cookies</a></li>
+                    <li><a href="contact.html" class="text-gray-700 hover:text-primary-orange font-semibold transition duration-200">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-br from-primary-orange to-accent-pink text-white py-20 md:py-32 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <!-- Placeholder for a swirling, vibrant background pattern -->
+                <div class="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-accent-lime rounded-full mix-blend-multiply opacity-30 animate-pulse-slow"></div>
+                <div class="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-accent-pink rounded-full mix-blend-multiply opacity-30 animate-pulse-slow animation-delay-2000"></div>
+            </div>
+            <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 relative z-10">
+                <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+                    <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
+                        Bite Happy. Crave Often.
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 opacity-90">
+                        Your ultimate playground for street food, snacky bites, fusion recipes, and playful food culture.
+                    </p>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                        <a href="#snack-hacks" class="btn-secondary flex items-center space-x-2 animate-bounce-subtle">
+                            <span class="text-2xl">🧁</span> <span>Fun Recipes</span>
+                        </a>
+                        <a href="#yumzone-blog" class="btn-primary flex items-center space-x-2 animate-bounce-subtle animation-delay-500">
+                            <span class="text-2xl">🎥</span> <span>Snack Reels</span>
+                        </a>
+                        <a href="#tumyum-originals" class="btn-secondary flex items-center space-x-2 animate-bounce-subtle animation-delay-1000">
+                            <span class="text-2xl">🥢</span> <span>Asian-Fusion Hits</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center lg:justify-end">
+                    <!-- Hero Image: A swirl of ramen, tacos, ice cream, and mini sliders -->
+                    <img src="p1.avif" alt="A vibrant swirl of delicious food items like ramen, tacos, ice cream, and mini sliders representing Tumyum's diverse offerings." class="rounded-xl shadow-2xl max-w-full h-auto transform rotate-3 hover:rotate-0 transition-transform duration-500 ease-in-out">
+                </div>
+            </div>
+        </section>
+
+        <!-- Snack Hacks Section -->
+        <section id="snack-hacks" class="container mx-auto px-4 py-16">
+            <h2 class="section-heading">Snack Hacks: Quick Bites, Big Flavors</h2>
+            <p class="text-center text-lg max-w-3xl mx-auto mb-12 text-gray-700">
+                Dive into our collection of DIY mini bites and quirky fusion snacks designed for your busiest days and most spontaneous cravings. From air-fryer wonders to 5-minute microwave miracles, these ideas are perfect for school lunches, impromptu parties, or just satisfying your solo snack attack. Get ready to hack your way to deliciousness!
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Recipe 1: Spicy Kimchi Grilled Cheese Dippers -->
+                <div class="recipe-card">
+                    <div class="recipe-image-container">
+                        <img src="p2.webp" alt="Spicy Kimchi Grilled Cheese Dippers" class="recipe-image">
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Spicy Kimchi Grilled Cheese Dippers</h3>
+                        <p class="recipe-description">
+                            Elevate your grilled cheese game with a tangy, spicy kick! This fusion delight combines the comforting warmth of melted cheese with the vibrant crunch of fermented kimchi, all nestled between perfectly toasted bread. Cut into dippable strips, they're ideal for sharing (or not!).
+                        </p>
+                        <p class="text-gray-600 text-sm mb-4">
+                            <strong>Prep Time:</strong> 10 mins | <strong>Cook Time:</strong> 8 mins | <strong>Serves:</strong> 2
+                        </p>
+                        <h4 class="text-xl font-semibold mb-2 text-primary-orange">Ingredients:</h4>
+                        <ul class="list-disc list-inside text-gray-700 mb-4 pl-4">
+                            <li>4 slices of your favorite bread (sourdough or brioche recommended)</li>
+                            <li>1 cup shredded sharp cheddar cheese</li>
+                            <li>1/2 cup shredded mozzarella cheese</li>
+                            <li>1/2 cup well-drained kimchi, chopped</li>
+                            <li>2 tablespoons unsalted butter, softened</li>
+                            <li>1 tablespoon gochujang (Korean chili paste, optional for extra heat)</li>
+                            <li>1 teaspoon sesame oil (optional)</li>
+                            <li>Pinch of black pepper</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mb-2 text-primary-orange">Instructions:</h4>
+                        <ol class="list-decimal list-inside text-gray-700 mb-4 pl-4">
+                            <li>In a small bowl, combine the shredded cheddar and mozzarella cheeses. If using, mix in the gochujang and sesame oil with the kimchi.</li>
+                            <li>Spread butter evenly on one side of each bread slice.</li>
+                            <li>Heat a non-stick pan or griddle over medium-low heat. Place two slices of bread, butter-side down, in the pan.</li>
+                            <li>Evenly distribute half of the cheese mixture over each slice. Top with half of the kimchi mixture.</li>
+                            <li>Place the remaining two slices of bread, butter-side up, on top of the cheese and kimchi.</li>
+                            <li>Cook for 3-4 minutes per side, or until the bread is golden brown and the cheese is bubbly and melted. Press gently with a spatula to ensure good contact.</li>
+                            <li>Remove from pan, let cool for a minute, then slice into dippable strips. Serve immediately with a side of sriracha mayo or a simple tomato soup for dipping.</li>
+                        </ol>
+                        <p class="text-gray-700 text-sm italic leading-relaxed">
+                            This snack hack transforms simple ingredients into something extraordinary. The combination of savory cheese, spicy kimchi, and crispy bread creates a symphony of textures and tastes. It's perfect for quick meals or casual gatherings. Tumyum encourages you to be a bold, fusion-style home cook, and this recipe is your first step! This dish perfectly embodies "Quick. Quirky. Tumyum." and "Flavors You Wanna Replay."
+                        </p>
+                        <a href="#" class="text-primary-orange hover:underline font-semibold">View Full Recipe &raquo;</a>
+                    </div>
+                </div>
+
+                <!-- Recipe 2: Avocado Toast with Everything Bagel Spice & Hot Honey Drizzle -->
+                <div class="recipe-card">
+                    <div class="recipe-image-container">
+                        <img src="p3.webp" alt="Avocado Toast with Everything Bagel Spice & Hot Honey Drizzle" class="recipe-image">
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Avocado Toast with Everything Bagel Spice & Hot Honey Drizzle</h3>
+                        <p class="recipe-description">
+                            A classic breakfast or snack gets a major upgrade! Creamy avocado meets the savory crunch of everything bagel seasoning, all balanced by a surprising drizzle of sweet and spicy hot honey. It's a flavor explosion that's quick, easy, and incredibly satisfying.
+                        </p>
+                        <p class="text-gray-600 text-sm mb-4">
+                            <strong>Prep Time:</strong> 5 mins | <strong>Cook Time:</strong> 2 mins | <strong>Serves:</strong> 1
+                        </p>
+                        <h4 class="text-xl font-semibold mb-2 text-primary-orange">Ingredients:</h4>
+                        <ul class="list-disc list-inside text-gray-700 mb-4 pl-4">
+                            <li>1 slice of your favorite bread (sourdough, whole wheat, or rye)</li>
+                            <li>1/2 ripe avocado</li>
+                            <li>1-2 teaspoons Everything Bagel Seasoning</li>
+                            <li>1-2 teaspoons hot honey (store-bought or homemade)</li>
+                            <li>Pinch of sea salt and black pepper</li>
+                            <li>Optional: red pepper flakes for extra heat, microgreens for garnish</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mb-2 text-primary-orange">Instructions:</h4>
+                        <ol class="list-decimal list-inside text-gray-700 mb-4 pl-4">
+                            <li>Toast your bread to your desired crispness.</li>
+                            <li>While the toast is warm, mash the avocado directly onto the toast with a fork. Season with a pinch of sea salt and black pepper.</li>
+                            <li>Generously sprinkle Everything Bagel Seasoning over the mashed avocado.</li>
+                            <li>Drizzle with hot honey. Add red pepper flakes or microgreens if desired.</li>
+                            <li>Serve immediately and enjoy your elevated avocado toast!</li>
+                        </ol>
+                        <p class="text-gray-700 text-sm italic leading-relaxed">
+                            This snack hack offers a powerful flavor combination: creamy avocado, savory everything bagel seasoning, and sweet-spicy hot honey. It's "Quick. Quirky. Tumyum." and perfect for any time of day. Customize with different bread or toppings for endless possibilities. This recipe is "Instagram-ready" and a flavor mashup you'll want to "Replay."
+                        </p>
+                        <a href="#" class="text-primary-orange hover:underline font-semibold">View Full Recipe &raquo;</a>
+                    </div>
+                </div>
+
+                <!-- Recipe 3: Loaded Sweet Potato Fries with Sriracha Mayo & Green Onions -->
+                <div class="recipe-card">
+                    <div class="recipe-image-container">
+                        <img src="p4.webp" alt="Loaded Sweet Potato Fries with Sriracha Mayo & Green Onions" class="recipe-image">
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Loaded Sweet Potato Fries with Sriracha Mayo & Green Onions</h3>
+                        <p class="recipe-description">
+                            Take your sweet potato fries from side dish to main event! Crispy, sweet, and savory fries are piled high with a creamy, spicy sriracha mayo, fresh green onions, and a sprinkle of sesame seeds. It's a crave-worthy snack that's impossible to resist.
+                        </p>
+                        <p class="text-gray-600 text-sm mb-4">
+                            <strong>Prep Time:</strong> 15 mins | <strong>Cook Time:</strong> 25-30 mins | <strong>Serves:</strong> 2-3
+                        </p>
+                        <h4 class="text-xl font-semibold mb-2 text-primary-orange">Ingredients:</h4>
+                        <ul class="list-disc list-inside text-gray-700 mb-4 pl-4">
+                            <li>2 large sweet potatoes, peeled and cut into fries</li>
+                            <li>2 tablespoons olive oil</li>
+                            <li>1/2 teaspoon salt</li>
+                            <li>1/4 teaspoon black pepper</li>
+                            <li>1/4 teaspoon paprika (smoked paprika for extra flavor)</li>
+                            <li>For Sriracha Mayo:</li>
+                            <li>1/2 cup mayonnaise</li>
+                            <li>2-3 tablespoons sriracha (adjust to your spice preference)</li>
+                            <li>1 teaspoon lime juice</li>
+                            <li>Garnish: chopped green onions, toasted sesame seeds</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mb-2 text-primary-orange">Instructions:</h4>
+                        <ol class="list-decimal list-inside text-gray-700 mb-4 pl-4">
+                            <li>Preheat oven to 400°F (200°C). Line a baking sheet with parchment paper.</li>
+                            <li>In a large bowl, toss the sweet potato fries with olive oil, salt, pepper, and paprika until evenly coated.</li>
+                            <li>Spread the fries in a single layer on the prepared baking sheet. Bake for 25-30 minutes, flipping halfway through, until golden brown and crispy.</li>
+                            <li>While fries are baking, prepare the sriracha mayo: In a small bowl, whisk together mayonnaise, sriracha, and lime juice until smooth.</li>
+                            <li>Once fries are done, transfer them to a serving platter. Drizzle generously with sriracha mayo.</li>
+                            <li>Garnish with chopped green onions and toasted sesame seeds. Serve immediately.</li>
+                        </ol>
+                        <p class="text-gray-700 text-sm italic leading-relaxed">
+                            These loaded sweet potato fries celebrate contrasting flavors and textures: sweet, savory, and spicy. It's a bold, fusion-style snack that elevates comfort food with a modern twist. Perfect for sharing or a gourmet treat, this dish is "Instagram-ready" and a "Flavor You Wanna Replay." Experiment with toppings for endless fun!
+                        </p>
+                        <a href="#" class="text-primary-orange hover:underline font-semibold">View Full Recipe &raquo;</a>
+                    </div>
+                </div>
+
+                <!-- Recipe 4: Rainbow Veggie Spring Rolls with Peanut Dipping Sauce -->
+                <div class="recipe-card">
+                    <div class="recipe-image-container">
+                        <img src="p5.webp" alt="Rainbow Veggie Spring Rolls" class="recipe-image">
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Rainbow Veggie Spring Rolls with Peanut Dipping Sauce</h3>
+                        <p class="recipe-description">
+                            Light, fresh, and bursting with color and crunch! These vibrant spring rolls are packed with an assortment of crisp vegetables and served with a rich, creamy peanut dipping sauce. They're a healthy and delicious snack or appetizer that's as beautiful as it is tasty.
+                        </p>
+                        <p class="text-gray-600 text-sm mb-4">
+                            <strong>Prep Time:</strong> 25 mins | <strong>Cook Time:</strong> 0 mins | <strong>Serves:</strong> 4
+                        </p>
+                        <h4 class="text-xl font-semibold mb-2 text-primary-orange">Ingredients:</h4>
+                        <ul class="list-disc list-inside text-gray-700 mb-4 pl-4">
+                            <li>8-10 rice paper wrappers</li>
+                            <li>1 cup cooked vermicelli noodles, cooled</li>
+                            <li>1 large carrot, julienned</li>
+                            <li>1 cucumber, julienned</li>
+                            <li>1 red bell pepper, thinly sliced</li>
+                            <li>1 cup shredded red cabbage</li>
+                            <li>1/2 cup fresh mint leaves</li>
+                            <li>1/2 cup fresh cilantro leaves</li>
+                            <li>1/4 cup chopped roasted peanuts (for garnish, optional)</li>
+                            <li>For Peanut Dipping Sauce:</li>
+                            <li>1/2 cup creamy peanut butter</li>
+                            <li>2 tablespoons soy sauce (or tamari for gluten-free)</li>
+                            <li>1 tablespoon rice vinegar</li>
+                            <li>1 tablespoon honey or maple syrup</li>
+                            <li>1 teaspoon grated fresh ginger</li>
+                            <li>1 clove garlic, minced</li>
+                            <li>1-2 tablespoons warm water (to thin)</li>
+                            <li>Pinch of red pepper flakes (optional)</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mb-2 text-primary-orange">Instructions:</h4>
+                        <ol class="list-decimal list-inside text-gray-700 mb-4 pl-4">
+                            <li>Prepare all your vegetables and herbs. Cook vermicelli noodles according to package directions, then drain and rinse with cold water to prevent sticking.</li>
+                            <li>To make the peanut sauce: In a small bowl, whisk together all peanut sauce ingredients until smooth and creamy. Add warm water gradually until it reaches your desired consistency. Taste and adjust seasonings as needed.</li>
+                            <li>Set up your rolling station: a shallow dish of warm water, your rice paper wrappers, and all your prepared fillings.</li>
+                            <li>Dip one rice paper wrapper into the warm water for about 20-30 seconds, until it's soft and pliable. Lay it flat on a clean, damp surface (a cutting board works well).</li>
+                            <li>Arrange a small amount of vermicelli noodles, carrot, cucumber, bell pepper, red cabbage, mint, and cilantro near one edge of the wrapper. Don't overfill!</li>
+                            <li>Fold the bottom edge of the wrapper over the filling, then fold in the sides. Roll tightly from the bottom up, creating a neat cylinder. Repeat with remaining wrappers and fillings.</li>
+                            <li>Serve the fresh spring rolls immediately with the peanut dipping sauce. Garnish with chopped roasted peanuts if desired.</li>
+                        </ol>
+                        <p class="text-gray-700 text-sm italic leading-relaxed">
+                            These Rainbow Veggie Spring Rolls are a visual and culinary delight, embodying "Fun to Cook. Yum to Eat." Packed with fresh vegetables and served with a creamy peanut sauce, they're healthy and "Instagram-ready." Customize fillings for endless possibilities. The homemade peanut sauce is the star. Perfect for meal prepping and a shining example of Tumyum's commitment to fun, small-portion recipes.
+                        </p>
+                        <a href="#" class="text-primary-orange hover:underline font-semibold">View Full Recipe &raquo;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tumyum Originals Section -->
+        <section id="tumyum-originals" class="bg-accent-pink bg-opacity-10 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="section-heading">Tumyum Originals: Bold Flavor Mashups</h2>
+                <p class="text-center text-lg max-w-3xl mx-auto mb-12 text-gray-700">
+                    Welcome to the Flavor Playground! Here, we unleash our wildest culinary imaginations to bring you unique flavor mashups and innovative recipes you won't find anywhere else. Get ready for recipe reels with trending music and visual cooking cards perfect for sharing your next obsession.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Original Recipe 1: Mango Sriracha Glazed Chicken Skewers -->
+                    <div class="recipe-card">
+                        <div class="recipe-image-container">
+                            <img src="p6.webp" alt="Mango Sriracha Glazed Chicken Skewers" class="recipe-image">
+                        </div>
+                        <div class="recipe-content">
+                            <h3 class="recipe-title">Mango Sriracha Glazed Chicken Skewers</h3>
+                            <p class="recipe-description">
+                                A tropical explosion of sweet, spicy, and savory! Tender chicken pieces are marinated and then glazed with a sticky, vibrant mango sriracha sauce, grilled to perfection. These skewers are a party in your mouth and a feast for the eyes.
+                            </p>
+                            <p class="text-gray-600 text-sm mb-4">
+                                <strong>Prep Time:</strong> 20 mins + 30 mins marinate | <strong>Cook Time:</strong> 15 mins | <strong>Serves:</strong> 4
+                            </p>
+                            <h4 class="text-xl font-semibold mb-2 text-primary-orange">Ingredients:</h4>
+                            <ul class="list-disc list-inside text-gray-700 mb-4 pl-4">
+                                <li>1.5 lbs boneless, skinless chicken thighs or breasts, cut into 1-inch cubes</li>
+                                <li>1 tablespoon olive oil</li>
+                                <li>Salt and black pepper to taste</li>
+                                <li>For Mango Sriracha Glaze:</li>
+                                <li>1 ripe mango, peeled and diced (about 1 cup)</li>
+                                <li>1/4 cup sriracha (adjust to heat preference)</li>
+                                <li>2 tablespoons rice vinegar</li>
+                                <li>1 tablespoon honey or maple syrup</li>
+                                <li>1 clove garlic, minced</li>
+                                <li>1 teaspoon grated fresh ginger</li>
+                                <li>1 tablespoon lime juice</li>
+                                <li>Optional: bamboo skewers, soaked in water for 30 minutes</li>
+                                <li>Garnish: chopped cilantro, sesame seeds</li>
+                            </ul>
+                            <h4 class="text-xl font-semibold mb-2 text-primary-orange">Instructions:</h4>
+                            <ol class="list-decimal list-inside text-gray-700 mb-4 pl-4">
+                                <li>In a blender or food processor, combine all glaze ingredients (mango, sriracha, rice vinegar, honey, garlic, ginger, lime juice) until smooth. Taste and adjust sweetness/spice as desired.</li>
+                                <li>Place chicken cubes in a bowl. Pour half of the mango sriracha glaze over the chicken and toss to coat. Marinate for at least 30 minutes in the refrigerator (or up to 4 hours). Reserve the other half of the glaze for basting.</li>
+                                <li>If using bamboo skewers, thread the marinated chicken onto them.</li>
+                                <li>Preheat grill to medium-high heat. Lightly oil the grates.</li>
+                                <li>Grill skewers for 12-15 minutes, turning occasionally, until chicken is cooked through and lightly charred. During the last 5 minutes of cooking, brush generously with the reserved glaze.</li>
+                                <li>Remove from grill, sprinkle with chopped cilantro and sesame seeds. Serve hot with rice or a fresh salad.</li>
+                            </ol>
+                            <p class="text-gray-700 text-sm italic leading-relaxed">
+                                These Mango Sriracha Glazed Chicken Skewers are a Tumyum Original, combining sweet mango with fiery sriracha for an unforgettable taste. Perfect for BBQs or quick dinners, they embody "Flavors You Wanna Replay." This photogenic dish is "Instagram-ready" and a testament to bold flavor exploration.
+                            </p>
+                            <a href="#" class="text-primary-orange hover:underline font-semibold">View Full Recipe &raquo;</a>
+                        </div>
+                    </div>
+
+                    <!-- Original Recipe 2: Ube Swirl Cheesecake Bites -->
+                    <div class="recipe-card">
+                        <div class="recipe-image-container">
+                            <img src="p7.webp" alt="Ube Swirl Cheesecake Bites" class="recipe-image">
+                        </div>
+                        <div class="recipe-content">
+                            <h3 class="recipe-title">Ube Swirl Cheesecake Bites</h3>
+                            <p class="recipe-description">
+                                Experience the vibrant purple magic of Ube (purple yam) in these delightful cheesecake bites. Creamy, rich, and with a subtle vanilla-like flavor, these mini cheesecakes are swirled with ube halaya for a stunning visual and irresistible taste.
+                            </p>
+                            <p class="text-gray-600 text-sm mb-4">
+                                <strong>Prep Time:</strong> 25 mins | <strong>Cook Time:</strong> 20-25 mins | <strong>Serves:</strong> 12 mini bites
+                            </p>
+                            <h4 class="text-xl font-semibold mb-2 text-primary-orange">Ingredients:</h4>
+                            <ul class="list-disc list-inside text-gray-700 mb-4 pl-4">
+                                <li>For Crust:</li>
+                                <li>1 cup graham cracker crumbs</li>
+                                <li>1/4 cup melted unsalted butter</li>
+                                <li>2 tablespoons granulated sugar</li>
+                                <li>For Cheesecake Filling:</li>
+                                <li>8 oz cream cheese, softened</li>
+                                <li>1/4 cup granulated sugar</li>
+                                <li>1 large egg</li>
+                                <li>1 teaspoon vanilla extract</li>
+                                <li>1/4 cup sour cream or plain Greek yogurt</li>
+                                <li>1/4 cup ube halaya (purple yam jam)</li>
+                                <li>Optional: purple food coloring for brighter color</li>
+                            </ul>
+                            <h4 class="text-xl font-semibold mb-2 text-primary-orange">Instructions:</h4>
+                            <ol class="list-decimal list-inside text-gray-700 mb-4 pl-4">
+                                <li>Preheat oven to 325°F (160°C). Line a 12-cup muffin tin with paper liners.</li>
+                                <li>For the crust: In a small bowl, combine graham cracker crumbs, melted butter, and sugar. Press about 1 tablespoon of the mixture into the bottom of each muffin liner. Bake for 5 minutes. Remove and let cool.</li>
+                                <li>For the filling: In a large bowl, beat softened cream cheese and sugar with an electric mixer until smooth. Beat in the egg and vanilla extract until just combined. Stir in the sour cream or yogurt.</li>
+                                <li>Divide the cheesecake batter in half. In one half, gently fold in the ube halaya and a few drops of purple food coloring if desired, until evenly colored.</li>
+                                <li>Spoon alternating dollops of plain cheesecake batter and ube cheesecake batter over the crusts. Use a skewer or toothpick to gently swirl the two colors together for a marbled effect.</li>
+                                <li>Bake for 20-25 minutes, or until the edges are set but the centers still jiggle slightly.</li>
+                                <li>Turn off the oven, crack the door open, and let the cheesecakes cool in the oven for 15 minutes. Then remove and cool completely on a wire rack. Refrigerate for at least 2 hours before serving.</li>
+                            </ol>
+                            <p class="text-gray-700 text-sm italic leading-relaxed">
+                                These Ube Swirl Cheesecake Bites are a delightful Tumyum Original. The vibrant purple ube combined with creamy cheesecake creates a stunning and delicious dessert. Perfect for small portions and "Instagram-ready," they encourage "bold, fusion-style home cooks" to explore new flavors. A true "Flavor You Wanna Replay."
+                            </p>
+                            <a href="#" class="text-primary-orange hover:underline font-semibold">View Full Recipe &raquo;</a>
+                        </div>
+                    </div>
+
+                    <!-- Original Recipe 3: Kimchi Fried Rice Arancini with Gochujang Aioli -->
+                    <div class="recipe-card">
+                        <div class="recipe-image-container">
+                            <img src="p8.webp" alt="Kimchi Fried Rice Arancini" class="recipe-image">
+                        </div>
+                        <div class="recipe-content">
+                            <h3 class="recipe-title">Kimchi Fried Rice Arancini with Gochujang Aioli</h3>
+                            <p class="recipe-description">
+                                An audacious fusion that marries Italian arancini with Korean kimchi fried rice! Crispy on the outside, savory and spicy on the inside with gooey melted cheese, these golden balls are served with a tangy, spicy gochujang aioli. Prepare for a flavor explosion!
+                            </p>
+                            <p class="text-gray-600 text-sm mb-4">
+                                <strong>Prep Time:</strong> 30 mins | <strong>Cook Time:</strong> 20 mins | <strong>Serves:</strong> 4-6
+                            </p>
+                            <h4 class="text-xl font-semibold mb-2 text-primary-orange">Ingredients:</h4>
+                            <ul class="list-disc list-inside text-gray-700 mb-4 pl-4">
+                                <li>For Arancini:</li>
+                                <li>3 cups cooked day-old short-grain rice (sushi rice works best)</li>
+                                <li>1 cup chopped kimchi, well-drained</li>
+                                <li>1/2 cup cooked and crumbled bacon or spam (optional)</li>
+                                <li>1/4 cup chopped green onions</li>
+                                <li>1 tablespoon soy sauce</li>
+                                <li>1 teaspoon sesame oil</li>
+                                <li>1/2 cup shredded mozzarella cheese, cut into small cubes</li>
+                                <li>1 cup all-purpose flour</li>
+                                <li>2 large eggs, beaten</li>
+                                <li>2 cups panko breadcrumbs</li>
+                                <li>Vegetable oil for frying</li>
+                                <li>For Gochujang Aioli:</li>
+                                <li>1/2 cup mayonnaise</li>
+                                <li>2-3 tablespoons gochujang (Korean chili paste)</li>
+                                <li>1 tablespoon lime juice</li>
+                                <li>1 clove garlic, minced</li>
+                            </ul>
+                            <h4 class="text-xl font-semibold mb-2 text-primary-orange">Instructions:</h4>
+                            <ol class="list-decimal list-inside text-gray-700 mb-4 pl-4">
+                                <li>In a large bowl, combine cooked rice, chopped kimchi, bacon/spam (if using), green onions, soy sauce, and sesame oil. Mix well.</li>
+                                <li>Take about 2 tablespoons of the rice mixture and flatten it in your palm. Place a small cube of mozzarella cheese in the center. Shape the rice mixture around the cheese to form a tight ball, about 1.5 inches in diameter. Repeat with remaining mixture.</li>
+                                <li>Set up a dredging station: one bowl with flour, one with beaten eggs, and one with panko breadcrumbs.</li>
+                                <li>Roll each rice ball first in flour, then dip in egg, and finally coat thoroughly in panko breadcrumbs, pressing gently to adhere.</li>
+                                <li>Heat about 2-3 inches of vegetable oil in a deep pot or Dutch oven to 350°F (175°C).</li>
+                                <li>Carefully fry the arancini in batches for 3-4 minutes, turning occasionally, until golden brown and crispy. Do not overcrowd the pot.</li>
+                                <li>Remove with a slotted spoon and place on a wire rack lined with paper towels to drain excess oil.</li>
+                                <li>For the Gochujang Aioli: Whisk together mayonnaise, gochujang, lime juice, and minced garlic until smooth.</li>
+                                <li>Serve the hot arancini immediately with the gochujang aioli for dipping.</li>
+                            </ol>
+                            <p class="text-gray-700 text-sm italic leading-relaxed">
+                                These Kimchi Fried Rice Arancini are a bold Tumyum Original, fusing Italian arancini with Korean kimchi fried rice. Crispy, savory, spicy, and cheesy, they're a playful comfort food twist. Perfect for "bold, fusion-style home cooks" and "social media food creators," these are "Flavors You Wanna Replay."
+                            </p>
+                            <a href="#" class="text-primary-orange hover:underline font-semibold">View Full Recipe &raquo;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Taste by Mood Section -->
+        <section id="taste-by-mood" class="container mx-auto px-4 py-16">
+            <h2 class="section-heading">Taste by Mood: Craving Filters</h2>
+            <p class="text-center text-lg max-w-3xl mx-auto mb-12 text-gray-700">
+                What are you craving right now? Let your mood guide your next bite! Our emoji-style navigation helps you discover recipes tailored to your current craving. Whether you need a pick-me-up or a chill-out treat, Tumyum has you covered.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-md transform hover:scale-105 transition duration-300 cursor-pointer">
+                    <span class="text-5xl mb-3 animate-bounce-subtle">🍭</span>
+                    <h3 class="text-xl font-semibold text-primary-orange">Sweet</h3>
+                    <p class="text-center text-sm text-gray-600 mt-2 leading-relaxed">Indulge your sweet tooth with delightful desserts, sugary snacks, and fruity concoctions. From decadent chocolate lava cakes to refreshing mango sticky rice, satisfy every sugary desire. Perfect for a post-dinner treat or a mid-afternoon pick-me-up. Get ready to bake, chill, and enjoy the sweetest side of Tumyum!</p>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-md transform hover:scale-105 transition duration-300 cursor-pointer">
+                    <span class="text-5xl mb-3 animate-bounce-subtle animation-delay-200">🌶️</span>
+                    <h3 class="text-xl font-semibold text-primary-orange">Spicy</h3>
+                    <p class="text-center text-sm text-gray-600 mt-2 leading-relaxed">Turn up the heat with fiery recipes and zesty snacks! From scorching hot wings to chili-infused noodles, these dishes awaken your senses. Explore global heat, from Korean gochujang to Mexican habanero, balancing intense spice with refreshing notes. Perfect for those who love a kick. Get ready to sweat, savor, and spice up your life the Tumyum way!</p>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-md transform hover:scale-105 transition duration-300 cursor-pointer">
+                    <span class="text-5xl mb-3 animate-bounce-subtle animation-delay-400">🧂</span>
+                    <h3 class="text-xl font-semibold text-primary-orange">Salty</h3>
+                    <p class="text-center text-sm text-gray-600 mt-2 leading-relaxed">Satisfy your savory cravings with perfectly salted snacks and umami-rich dishes. From crispy seasoned fries to savory popcorn, these recipes hit all the right salty notes. Discover the magic of sea salt caramel popcorn or roasted chickpeas. Ideal for movie nights or any comforting bite. Get ready to crunch, munch, and indulge in the savory side of Tumyum!</p>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-md transform hover:scale-105 transition duration-300 cursor-pointer">
+                    <span class="text-5xl mb-3 animate-bounce-subtle animation-delay-600">🧀</span>
+                    <h3 class="text-xl font-semibold text-primary-orange">Cheesy</h3>
+                    <p class="text-center text-sm text-gray-600 mt-2 leading-relaxed">Indulge in the gooey, melty goodness of our cheesy creations! From classic mac and cheese with a twist to loaded cheese fries, these recipes are a cheese lover's dream. Explore versatile cheeses, from sharp cheddar to creamy mozzarella. Perfect for comfort food cravings or game day snacks. Get ready to melt, stretch, and savor the irresistible world of cheese with Tumyum!</p>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white rounded-xl shadow-md transform hover:scale-105 transition duration-300 cursor-pointer">
+                    <span class="text-5xl mb-3 animate-bounce-subtle animation-delay-800"> crunchy</span>
+                    <h3 class="text-xl font-semibold text-primary-orange">Crunchy</h3>
+                    <p class="text-center text-sm text-gray-600 mt-2 leading-relaxed">Craving that satisfying snap and crackle? Our crunchy collection delivers maximum texture! From crispy fried chicken bites to roasted veggie chips, prepare for a symphony of sounds and flavors. Discover secrets to extra-crispy spring rolls or homemade pita chips. Ideal for textural contrast. Get ready to crunch, munch, and enjoy the textural wonders of Tumyum!</p>
+                </div>
+            </div>
+            <p class="text-center text-lg max-w-3xl mx-auto mb-12 text-gray-700">
+                Beyond these core moods, Tumyum is a universe of flavor waiting to be explored. We aim to make finding your next favorite snack intuitive and fun, believing food should extend your personality. This section constantly evolves, with new categories and personalized recommendations. Share your ideas to build the ultimate "Taste by Mood" experience. Tumyum: where every craving finds its perfect match!
+            </p>
+        </section>
+
+        <!-- The YumZone Blog Section (Teaser) -->
+        <section id="yumzone-blog" class="bg-accent-lime bg-opacity-10 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="section-heading">The YumZone Blog: Tummy Talk & Food Adventures</h2>
+                <p class="text-center text-lg max-w-3xl mx-auto mb-12 text-gray-700">
+                    Step into The YumZone, our blog dedicated to all things food, fun, and flavor! Here, we share "Tummy Talk" food stories, challenge you with quirky culinary dares, and embark on global food discoveries, all made fun and approachable.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog Post Teaser 1 -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                        <h3 class="text-2xl font-bold mb-3 text-primary-orange">Tummy Talk: The Secret Life of Leftover Rice</h3>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            Discover the magic of leftover rice! This "Tummy Talk" post explores transformations from crispy fried rice cakes to savory bowls. Learn storage tips, reheating hacks, and innovative recipes. Maximize flavor and creativity with every grain, exploring global inspirations like bibimbap and arancini. Join our community and share your hacks!
+                        </p>
+                        <a href="blog.html#post1" class="text-accent-pink hover:underline font-semibold">Read More &raquo;</a>
+                    </div>
+                    <!-- Blog Post Teaser 2 -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                        <h3 class="text-2xl font-bold mb-3 text-primary-orange">Challenge Accepted: Make Your Snack Ugly-Cute!</h3>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            Embrace the wonderfully weird side of food with our "Ugly-Cute Snack Challenge"! Create snacks that are undeniably delicious and charmingly quirky. This challenge encourages creativity, reduces pressure, and celebrates imperfectly perfect food. Share your creations using #TumyumUglyCute and join the fun-loving community.
+                        </p>
+                        <a href="blog.html#post2" class="text-accent-pink hover:underline font-semibold">Read More &raquo;</a>
+                    </div>
+                    <!-- Blog Post Teaser 3 -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                        <h3 class="text-2xl font-bold mb-3 text-primary-orange">Global Bites: Unearthing Street Food Gems</h3>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            Join us on a culinary journey around the world! We highlight incredible street food gems perfect for your snack rotation, from Mexican esquites to Filipino banana cue. Discover simplified recipes and cultural context, making global experiences accessible. Expand your palate and impress friends with exciting new finds.
+                        </p>
+                        <a href="blog.html#post3" class="text-accent-pink hover:underline font-semibold">Read More &raquo;</a>
+                    </div>
+                </div>
+                <p class="text-center text-lg max-w-3xl mx-auto mt-12 text-gray-700">
+                    The YumZone Blog is a community hub where food lovers connect, share, and inspire. We believe every snack has a story and every meal is an opportunity for joy. Our articles are engaging, informative, and aligned with Tumyum's fun-first spirit. We feature guest posts, collaborate with creators, and delve into topics like "Snack-Sized Science." Your voice matters in The YumZone. Tumyum: Bite Happy. Crave Often.
+                </p>
+            </div>
+        </section>
+
+        <!-- Interactive Extras (Call to Action) -->
+        <section class="container mx-auto px-4 py-16 text-center">
+            <h2 class="section-heading">Ready for More Fun?</h2>
+            <p class="text-lg max-w-3xl mx-auto mb-12 text-gray-700">
+                Tumyum is more than just recipes; it's an interactive experience! Get ready to play, discover, and unleash your inner snack guru with our exciting extras.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <span class="text-6xl mb-4 animate-bounce-subtle">🤔</span>
+                    <h3 class="text-xl font-bold text-primary-orange mb-2">Snack Personality Quiz</h3>
+                    <p class="text-gray-700 text-center mb-4 leading-relaxed">
+                        What kind of snack are you? Take our fun quiz to discover your true snack identity and get personalized recipe recommendations! Perfect for "teenagers and Gen Z snackers" who love self-discovery and playful content.
+                    </p>
+                    <a href="#" class="btn-secondary">Take the Quiz!</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <span class="text-6xl mb-4 animate-bounce-subtle animation-delay-200">✨</span>
+                    <h3 class="text-xl font-bold text-primary-orange mb-2">Tumyum Generator</h3>
+                    <p class="text-gray-700 text-center mb-4 leading-relaxed">
+                        Stuck in a snack rut? Let the Tumyum Generator spark your creativity! This playful tool randomly combines ingredients and methods for surprise snack ideas. Perfect for "bold, fusion-style home cooks" seeking their next experimental masterpiece.
+                    </p>
+                    <a href="#" class="btn-primary">Generate Idea!</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <span class="text-6xl mb-4 animate-bounce-subtle animation-delay-400">🎨</span>
+                    <h3 class="text-xl font-bold text-primary-orange mb-2">SnackStyle Avatars</h3>
+                    <p class="text-gray-700 text-center mb-4 leading-relaxed">
+                        Unleash your inner artist! Build cartoon versions of yourself as your favorite snacks. Customize features, add accessories, and share your unique SnackStyle Avatar. Designed for "social media food creators" and anyone who loves playful self-expression.
+                    </p>
+                    <a href="#" class="btn-secondary">Create Avatar!</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                    <span class="text-6xl mb-4 animate-bounce-subtle animation-delay-600">🎮</span>
+                    <h3 class="text-xl font-bold text-primary-orange mb-2">Mini Game: Tumyum Tap</h3>
+                    <p class="text-gray-700 text-center mb-4 leading-relaxed">
+                        Ready for a challenge? Play Tumyum Tap, our addictive tap-to-cook mini snack sim! Race against the clock to prepare delicious virtual snacks, earn points, and unlock new ingredients. Perfect for "snack-sized attention spans" and competitive foodies.
+                    </p>
+                    <a href="#" class="btn-primary">Play Now!</a>
+                </div>
+            </div>
+            <p class="text-center text-lg max-w-3xl mx-auto mt-12 text-gray-700">
+                These interactive extras deepen your engagement with Tumyum, making your culinary journey more enjoyable. We believe food should be an adventure, full of fun and discovery. Our commitment to playful food culture extends beyond recipes, building a community where everyone feels at home. Tumyum is not just a platform; it's a lifestyle.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12 px-4">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Disclaimer Section -->
+            <div>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">Disclaimer</h3>
+                <p class="text-sm leading-relaxed">
+                    The information on Tumyum.com is for general informational and entertainment purposes only. We strive for accuracy but make no warranties regarding completeness or suitability. Reliance on this information is at your own risk.
+                    <br><br>
+                    Tumyum is not responsible for adverse reactions or health issues from recipes. Users must be aware of their own dietary restrictions and allergies, and consult a healthcare professional before making significant dietary changes. Our recipes may contain common allergens; we do not guarantee cross-contamination freedom. Exercise caution.
+                    <br><br>
+                    Cooking times and serving sizes are estimates. Users should use judgment to ensure food is cooked thoroughly and safely. Tumyum is not liable for foodborne illnesses. Use kitchen equipment with caution; children should be supervised.
+                    <br><br>
+                    Fusion recipes are creative interpretations, not traditional standards, designed for fun and experimentation.
+                    <br><br>
+                    Tumyum may link to external websites; we do not guarantee their accuracy or endorse their content.
+                    <br><br>
+                    By using Tumyum.com, you consent to this disclaimer, which may change without notice. Your continued use signifies acceptance of updates.
+                </p>
+            </div>
+
+            <!-- Customer Satisfaction & About Us -->
+            <div>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">Customer Satisfaction</h3>
+                <p class="text-sm leading-relaxed mb-6">
+                    At Tumyum, your happiness is our top priority! We provide delightful and engaging content that is inspiring, fun, and easy to follow. Your feedback is invaluable for continuous improvement.
+                    <br><br>
+                    For questions, suggestions, or issues, contact our support team. We're committed to prompt assistance and fostering a vibrant community where everyone feels empowered to "Bite Happy. Crave Often." Your satisfaction fuels our passion for playful food culture!
+                </p>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">About Tumyum</h3>
+                <p class="text-sm leading-relaxed">
+                    Tumyum is a fun-first food platform blending street food, snacky bites, fusion recipes, and playful food culture. We cater to teenagers, Gen Z snackers, bold fusion-style home cooks, social media food creators, and anyone seeking fun, small-portion recipes and exciting flavor mashups. Our mission is to make cooking and eating an adventure, full of joy, creativity, and delicious surprises.
+                </p>
+            </div>
+
+            <!-- Address and Copyright -->
+            <div>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">Get In Touch</h3>
+                <p class="text-sm mb-2">
+                    <strong>Tumyum HQ</strong><br>
+                    123 Flavor Fusion Lane<br>
+                    Snackville, CA 90210<br>
+                    United States
+                </p>
+                <p class="text-sm mb-2">
+                    Email: <a href="mailto:hello@tumyum.com" class="text-accent-lime hover:underline">hello@tumyum.com</a>
+                </p>
+                <p class="text-sm mb-6">
+                    Phone: +1 (555) 123-4567
+                </p>
+                <h3 class="text-2xl font-bold text-primary-orange mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-accent-pink transition duration-200">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.505 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C17.34 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-accent-pink transition duration-200">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.797.048.843.04 1.15.138 1.53.273.354.124.67.3.996.52.624.42 1.164.957 1.787 1.58.623.623 1.164 1.165 1.58 1.787.223.325.4.64.521.996.135.38.233.687.273 1.53.047 1.013.048 1.367.048 3.797s-.001 2.783-.048 3.796c-.04.843-.138 1.15-.273 1.53-.124.354-.3.67-.52 1.002-.624.624-1.164 1.165-1.787 1.788-.623.623-1.165 1.164-1.787 1.58-.325.223-.64.4-1.002.521-.38.135-.687.233-1.53.273-1.013.047-1.367.048-3.797.048s-2.783-.001-3.796-.048c-.843-.04-1.15-.138-1.53-.273-.354-.124-.67-.3-.996-.52-.624-.42-1.164-.957-1.787-1.58-.623-.623-1.165-1.164-1.787-1.58-.223-.325-.4-.64-.521-.996-.135-.38-.233-.687-.273-1.53-.047-1.013-.048-1.367-.048-3.797s.001-2.783.048-3.796c.04-.843.138-1.15.273-1.53.124-.354.3-.67.52-1.002.624-.624 1.164-1.165 1.787-1.788.623-.623 1.165-1.164 1.787-1.58.325-.223.64-.4 1.002-.521.38-.135.687-.233 1.53-.273C9.517 2.001 9.871 2 12.315 2zm0 2.166c-2.42 0-2.75.002-3.71.047-.78.036-1.053.12-.34.238-.27.097-.52.22-.76.38-.56.36-.97.77-1.33 1.13-.36.36-.77.77-1.13 1.33-.16.24-.28.49-.38.76-.118.78-.202 1.053-.238 3.71-.045.96-.047 1.29-.047 3.71s.002 2.75.047 3.71c.036.78.12 1.053.238 1.34.097.27.22.52.38.76.36.56.77.97 1.13 1.33.36.36.77.77 1.33 1.13.24.16.49.28.76.38.287.118.56.202 1.34.238.96.045 1.29.047 3.71.047s2.75-.002 3.71-.047c.78-.036 1.053-.12 1.34-.238.27-.097.52-.22.76-.38.56-.36.97-.77 1.33-1.13.36-.36.77-.77 1.13-1.33.16-.24.28-.49.38-.76.118-.287.202-.56.238-1.34.045-.96.047-1.29.047-3.71s-.002-2.75-.047-3.71c-.036-.78-.12-1.053-.238-1.34-.097-.27-.22-.52-.38-.76-.36-.56-.77-.97-1.13-1.33-.36-.36-.77-.77-1.33-1.13-.24-.16-.49-.28-.76-.38-.287-.118-.56-.202-1.34-.238-.96-.045-1.29-.047-3.71-.047zM12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.535a3.4 3.4 0 110-6.8 3.4 3.4 0 010 6.8z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-accent-pink transition duration-200">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8.29 20.251c-1.09 0-1.87-.53-2.34-1.48-.32-.65-.32-1.48 0-2.13.47-.95 1.25-1.48 2.34-1.48 1.09 0 1.87.53 2.34 1.48.32.65.32-1.48 0-2.13-.47-.95-1.25-1.48-2.34-1.48zm-3.25-7.25c.87 0 1.58-.71 1.58-1.58 0-.87-.71-1.58-1.58-1.58-.87 0-1.58.71-1.58 1.58 0 .87.71 1.58 1.58 1.58zm6.5 0c.87 0 1.58-.71 1.58-1.58 0-.87-.71-1.58-1.58-1.58-.87 0-1.58.71-1.58 1.58 0 .87.71 1.58 1.58 1.58zm6.5 0c.87 0 1.58-.71 1.58-1.58 0-.87-.71-1.58-1.58-1.58-.87 0-1.58.71-1.58 1.58 0 .87.71 1.58 1.58 1.58z" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-sm mt-6">&copy; 2025 Tumyum. All rights reserved. Bite Happy. Crave Often.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
